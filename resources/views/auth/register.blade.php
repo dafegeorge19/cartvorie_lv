@@ -1,225 +1,189 @@
-@extends('layouts.auth')
+@extends('layouts.customer')
 
 @section('title', 'Register')
 
 @section('content')
-<div class="register-box">
-  <div class="register-logo">
-    <a href="{{ url('/') }}">Logo</a>
-  </div>
+<section class="py-12 pt-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-6">
 
-  <div class="card">
-    <div class="card-body register-card-body">
+                  <!-- Card -->
+                  <div class="card card-lg mb-10 mb-md-0">
+                    <div class="card-body">
 
+                      <!-- Heading -->
+                      <h6 class="mb-7">Returning Customer</h6>
 
-      <form method="POST" action="{{ route('register') }}">
-        @csrf
+                      <!-- Form -->
+                      <form>
+                        <div class="row">
+                          <div class="col-12">
 
-        <div class="input-group">
+                            <!-- Email -->
+                            <div class="form-group">
+                              <label class="sr-only" for="loginEmail">
+                                Email Address *
+                              </label>
+                              <input class="form-control form-control-sm" id="loginEmail" type="email" placeholder="Email Address *" required="">
+                            </div>
 
-          <input placeholder="First Name" id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
+                          </div>
+                          <div class="col-12">
 
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
+                            <!-- Password -->
+                            <div class="form-group">
+                              <label class="sr-only" for="loginPassword">
+                                Password *
+                              </label>
+                              <input class="form-control form-control-sm" id="loginPassword" type="password" placeholder="Password *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12 col-md">
+
+                            <!-- Remember -->
+                            <div class="form-group">
+                              <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" id="loginRemember" type="checkbox">
+                                <label class="custom-control-label" for="loginRemember">
+                                  Remember me
+                                </label>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="col-12 col-md-auto">
+
+                            <!-- Link -->
+                            <div class="form-group">
+                              <a class="font-size-sm text-reset" data-toggle="modal" href="#modalPasswordReset">Forgot Password?</a>
+                            </div>
+
+                          </div>
+                          <div class="col-12">
+
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-primary" type="submit">
+                              Sign In
+                            </button>
+
+                          </div>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Card -->
+                  <div class="card card-lg">
+                    <div class="card-body">
+
+                      <!-- Heading -->
+                      <h6 class="mb-7">New Customer</h6>
+
+                      <!-- Form -->
+                      <form>
+                        <div class="row">
+                          <div class="col-12">
+
+                            <!-- Email -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerFirstName">
+                                First Name *
+                              </label>
+                              <input class="form-control form-control-sm" id="registerFirstName" type="text" placeholder="First Name *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12">
+
+                            <!-- Email -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerLastName">
+                                Last Name *
+                              </label>
+                              <input class="form-control form-control-sm" id="registerLastName" type="text" placeholder="Last Name *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12">
+
+                            <!-- Email -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerEmail">
+                                Email Address *
+                              </label>
+                              <input class="form-control form-control-sm" id="registerEmail" type="email" placeholder="Email Address *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12 col-md-6">
+
+                            <!-- Password -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerPassword">
+                                Password *
+                              </label>
+                              <input class="form-control form-control-sm" id="registerPassword" type="password" placeholder="Password *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12 col-md-6">
+
+                            <!-- Password -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerPasswordConfirm">
+                                Confirm Password *
+                              </label>
+                              <input class="form-control form-control-sm" id="registerPasswordConfirm" type="password" placeholder="Confrm Password *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12 col-md-auto">
+
+                            <!-- Link -->
+                            <div class="form-group font-size-sm text-muted">
+                              By registering your details, you agree with our Terms &amp; Conditions,
+                              and Privacy and Cookie Policy.
+                            </div>
+
+                          </div>
+                          <div class="col-12 col-md">
+
+                            <!-- Newsletter -->
+                            <div class="form-group">
+                              <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" id="registerNewsletter" type="checkbox">
+                                <label class="custom-control-label" for="registerNewsletter">
+                                  Sign me up for the Newsletter!
+                                </label>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="col-12">
+
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-primary" type="submit">
+                              Register
+                            </button>
+
+                          </div>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
-          </div>
-
-        </div>
-        @error('first_name')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-        
-
-
-        <div class="input-group mt-3">
-
-          <input placeholder="Other Names" id="other_names" type="text" class="form-control @error('other_names') is-invalid @enderror" name="other_names" value="{{ old('other_names') }}" required autocomplete="other_names">
-
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-          
-        </div>
-        @error('other_names')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-
-
-        <div class="input-group mt-3">
-
-          <input placeholder="Phone Number" id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
-
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-phone"></span>
-            </div>
-          </div>
-          
-        </div>
-        @error('phone_number')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-
-
-
-        <div class="input-group mt-3">
-
-          <input placeholder="Email" id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-          
-        </div>
-        @error('email')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-
-
-        <div class="input-group mt-3">
-          <select name="state" id="state_select" class="form-control @error('state') is-invalid @enderror" name="state" required>
-            <option value="">Select State</option>
-          </select>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-map-marker"></span>
-            </div>
-          </div>
-
-        </div>
-        @error('state')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-
-        <div class="input-group mt-3">
-          <select name="area" id="area_select" class="form-control" class="form-control @error('area') is-invalid @enderror" name="area" required disabled="disabled">
-            <option value="">Select Area</option>
-          </select>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-map-marker"></span>
-            </div>
-          </div>
-
-        </div>
-        @error('area')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-
-
-        <div class="input-group mt-3">
-
-          <input placeholder="Street Address" id="street_address" type="text" class="form-control @error('street_address') is-invalid @enderror" name="street_address" value="{{ old('street_address') }}" required autocomplete="street_address" autofocus>
-
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-map-marker"></span>
-            </div>
-          </div>
-          
-        </div>
-        @error('street_address')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-
-        
-
-        
-
-        <div class="input-group mt-3">
-          <input placeholder="Password"  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        @error('password')
-            <p class="text-danger pt-0" role="alert" style="padding: 0px">
-                <small>{{ $message }}</small>
-            </p>
-        @enderror
-
-
-
-
-        <div class="input-group mt-3">
-          <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="row mt-3">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="agreeTerms" value="agree" class="@error('street_address') is-invalid @enderror" required>
-              <label for="agreeTerms">
-               I agree to the <a href="{{ url('/terms_and_conditions') }}" target="_blank">terms & Conditions</a>
-              </label>
-            </div>
-
-            @error('agreeTerms')
-                <span class="text-center text-danger" role="alert">
-                    <small>{{ $message }}</small>
-                </span>
-            @enderror
-
-          </div>
-
-          
-
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">
-                {{ __('Register') }}
-            </button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-
-      <div class="social-auth-links text-center d-none">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
-        </a>
-      </div>
-
-      <a href="{{ route('login') }}" class="text-center mt-3">I already have an account</a>
-    </div>
-    <!-- /.form-box -->
-  </div><!-- /.card -->
-</div>
-@endsection
+          </section>
+    @endsection
 
 @section('js')
 
@@ -273,7 +237,7 @@
 
         // when user selects a new satte, get the cities for that state
         $('#state_select').on('change', function(e) {
-          
+
           $('#area_select').attr('disabled', 'disabled')
           $('#area_select').empty()
           $('#area_select').append(`<option value="" class="text-capitalize">Select Area</option>`)
@@ -320,7 +284,7 @@
 
 
 
-        
+
 
   })
 </script>
