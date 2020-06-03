@@ -1,0 +1,134 @@
+
+.menu__list {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menu__item {
+	display: block;
+	margin: 0em 0;
+}
+
+.menu__link {
+	font-size: 1.05em;
+	font-weight: bold;
+	display: block;
+	padding: 1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.menu__link:hover,
+.menu__link:focus {
+	outline: none;
+}
+
+/* Individual styles */
+.menu--shylock .menu__link {
+	position: relative;
+    margin: 0;
+	color: #b5b5b5;
+	-webkit-transition: color 0.4s;
+	transition: color 0.4s;
+}
+
+  .menu__link::after {
+      background: #652f91 !important;
+  }
+
+  .menu__link::before {
+      background: #653091 !important;
+  }
+
+  .box_1 {
+       background: transparent;
+       padding: 15px 22px;
+      text-align: right;
+  }
+
+  .header-bot {
+      padding: 15px 0 10px 0;
+  }
+
+
+
+  .header-middle form input[type="submit"] {
+      background: url(/asset/img/search.png) no-repeat 4px 0px #643091;
+      width: 55px;
+  }
+
+  .dropdown-menu.columns-3 {
+      min-width: 250px !important;
+      padding: 30px 30px;
+  }
+
+  .snipcart-details input.button {
+      background: black;
+   }
+
+  .snipcart-details input.button:hover {
+      background: red;
+   }
+
+   .hvr-outline-out:before {
+      border: red solid 4px;
+      }
+
+      .hvr-outline-out {
+      background-color: red;
+  }
+
+  .men-thumb-item .pro-image-front {
+  	height: 200px;
+  	object-fit: cover;
+  }
+
+  .men-thumb-item .pro-image-back {
+  	height: 200px;
+  	object-fit: cover;
+  }
+
+  sp {
+  	background-color: rgba(0,0,0,0.5);
+  }
+
+  figure.effect-roxy img {
+      height: 300px;
+  }
+
+  p.copy-right {
+      margin-top: 0px;
+  }
+
+  .footer {
+      padding: 4em 0px 3px 0px;
+      background: #000;
+  }
+
+  .w3layouts_mail_grid_left2 h3 {
+      padding-top: 25px;
+  }
+
+  .text-truncate {
+  	width: 100%;
+  	padding: 0px 10px;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  }
+
+  .text-capitalize {
+  	text-transform: capitalize;
+  }
