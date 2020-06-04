@@ -68,11 +68,11 @@
                 <tbody>
                     @foreach($orders as $order)
                         <tr class="text-capitalize">
-                            <td>{{ $order->billing_first_name . ' ' . $order->billing_other_names }}</td>
+                            <td>{{ $order->billing_fullname . ' ' . $order->billing_username }}</td>
                             <td>{{ $order->get_billing_address() }}</td>
                             <td>{{ $order->billing_phone_number }}</td>
                             <td>{{ $order->billing_email }}</td>
-                            <td>{{ $order->delivery_first_name . ' ' . $order->delivery_other_names }}</td>
+                            <td>{{ $order->delivery_fullname . ' ' . $order->delivery_username }}</td>
                             <td>{{ $order->get_delivery_address() }}</td>
                             <td>{{ $order->delivery_phone_number }}</td>
                             <td>{{ $order->delivery_email }}</td>

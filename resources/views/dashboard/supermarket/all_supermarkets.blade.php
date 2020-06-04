@@ -61,7 +61,7 @@
                             <td>{{ $supermarket->name }}</td>
                             <td>{{ $supermarket->state->name }}</td>
                             <td>{{ $supermarket->area->name }}</td>
-                            <td>{{ $supermarket->street_address }}</td>
+                            <td>{{ $supermarket->account_type }}</td>
                             <td>
                                 <a href="{{ url('/admin/edit_supermarket', [$supermarket->id]) }}" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="{{ url('/admin/delete_supermarket', [$supermarket->id]) }}" class="btn btn-danger btn-sm">delete</a>

@@ -41,17 +41,17 @@
                                                 <div class="woocommerce-billing-fields__field-wrapper">
 
 
-                                                    <p id="billing_first_name_field" class="form-row form-row-last validate-required">
-                                                        <label class="" for="billing_first_name">First Name
+                                                    <p id="billing_fullname_field" class="form-row form-row-last validate-required">
+                                                        <label class="" for="billing_fullname">First Name
                                                             <abbr title="required" class="required">*</abbr>
 
-                                                            @error('first_name')
+                                                            @error('fullname')
                                                                 <span class="text-danger" role="alert">
                                                                     <strong>{{ $message }}</strong>
                                                                 </span>
                                                             @enderror
                                                         </label>
-                                                        <input type="text" class="input-text @error('first_name') is-invalid @enderror" id="first_name" name="first_name" placeholder="Enter agents's first name" value="{{ old('first_name') }}" required autofocus>
+                                                        <input type="text" class="input-text @error('fullname') is-invalid @enderror" id="fullname" name="fullname" placeholder="Enter agents's first name" value="{{ old('fullname') }}" required autofocus>
                                                     </p>
                                                     
 
@@ -60,17 +60,17 @@
                                                         <label class="" for="billing_last_name">Other Names
                                                             <abbr title="required" class="required">*</abbr>
 
-                                                            @error('other_names')
+                                                            @error('username')
                                                                 <span class="text-danger" role="alert">
                                                                     <strong>{{ $message }}</strong>
                                                                 </span>
                                                             @enderror
                                                         </label>
-                                                        <input type="text" class="input-text @error('other_names') is-invalid @enderror" id="other_names" name="other_names" placeholder="Enter agent's other names" value="{{ old('other_names') }}" required>
+                                                        <input type="text" class="input-text @error('username') is-invalid @enderror" id="username" name="username" placeholder="Enter agent's other names" value="{{ old('username') }}" required>
                                                     </p>
                                                     
                                                     <p id="billing_last_name_field" class="form-row form-row-last validate-required">
-                                                        <label class="" for="billing_first_name">Phone Number
+                                                        <label class="" for="billing_fullname">Phone Number
                                                             <abbr title="required" class="required">*</abbr>
 
                                                             @error('phone_number')
@@ -95,7 +95,7 @@
                                                         <input type="email" class="input-text @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter agent's e-mail" value="{{ old('email') }}" required>
                                                     </p>
 
-                                                    <p id="billing_first_name_field" class="form-row form-row-last validate-required">
+                                                    <p id="billing_fullname_field" class="form-row form-row-last validate-required">
                                                         <label class="" for="billing_country">State
                                                             <abbr title="required" class="required">*</abbr>
 
@@ -130,17 +130,17 @@
                                                     </p>
 
 
-                                                    <p id="billing_first_name_field" class="form-row form-row-last validate-required">
-                                                        <label class="" for="billing_first_name">Street Address
+                                                    <p id="billing_fullname_field" class="form-row form-row-last validate-required">
+                                                        <label class="" for="billing_fullname">Street Address
                                                             <abbr title="required" class="required">*</abbr>
 
-                                                            @error('street_address')
+                                                            @error('account_type')
                                                                 <span class="text-danger" role="alert">
                                                                     <strong>{{ $message }}</strong>
                                                                 </span>
                                                             @enderror
                                                         </label>
-                                                        <input type="text" id="street_address" name="street_address" placeholder="e.g No 1, Kudang Street" value="{{ old('street_address') }}" required class="input-text ">
+                                                        <input type="text" id="account_type" name="account_type" placeholder="e.g No 1, Kudang Street" value="{{ old('account_type') }}" required class="input-text ">
                                                     </p>
 
                                                     <p id="billing_last_name_field" class="form-row form-row-last validate-required">
@@ -163,8 +163,8 @@
                                                         <input type="password" name="password_confirmation" required class="input-text">
                                                     </p>
 
-                                                    <p id="billing_first_name_field" class="form-row form-row-last validate-required">
-                                                        <label class="" for="billing_first_name">Your CV
+                                                    <p id="billing_fullname_field" class="form-row form-row-last validate-required">
+                                                        <label class="" for="billing_fullname">Your CV
                                                             <abbr title="required" class="required">*</abbr>
 
                                                             @error('cv')

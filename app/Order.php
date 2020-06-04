@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $fillable = [
-        'user_id', 'customer_state_id', 'customer_area_id', 'delivery_street_address', 'paystack_payment_ref', 'paystack_payment_ref', 'delivery_fee', 'total_products_weight', 'payment_type'
+        'user_id', 'customer_state_id', 'customer_area_id', 'delivery_account_type', 'paystack_payment_ref', 'paystack_payment_ref', 'delivery_fee', 'total_products_weight', 'payment_type'
     ];
 
     /**
@@ -52,7 +52,7 @@ class Order extends Model
 
     public function get_billing_address()
     {
-        return $this->billing_street_address . ', ' . $this->billing_area->name . ', ' . $this->billing_state->name;
+        return $this->billing_account_type . ', ' . $this->billing_area->name . ', ' . $this->billing_state->name;
     }
 
     /**
@@ -73,7 +73,7 @@ class Order extends Model
 
     public function get_delivery_address()
     {
-        return $this->delivery_street_address . ', ' . $this->delivery_area->name . ', ' . $this->delivery_state->name;
+        return $this->delivery_account_type . ', ' . $this->delivery_area->name . ', ' . $this->delivery_state->name;
     }
 
     /**

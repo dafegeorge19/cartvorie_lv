@@ -16,18 +16,23 @@
                       <h6 class="mb-5">Returning Customer</h6>
 
                       <!-- Form -->
-                      <form>
+                      <form method="POST" action="{{ route('login') }}">
                         <div class="row">
                           <div class="col-12">
+                            @csrf
 
                             <!-- Email -->
                             <div class="form-group">
                               <label class="sr-only" for="loginEmail">
                                 Email Address *
                               </label>
-                              <input class="form-control form-control-sm" id="loginEmail" type="email" placeholder="Email Address *" required="">
+                              <input class="form-control form-control-sm @error('email') is-invalid @enderror" id="loginEmail" type="email" name="email" value="{{ old('email') }}"  placeholder="Email Address *" required="">
                             </div>
-
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                           </div>
                           <div class="col-12">
 
@@ -36,16 +41,20 @@
                               <label class="sr-only" for="loginPassword">
                                 Password *
                               </label>
-                              <input class="form-control form-control-sm" id="loginPassword" type="password" placeholder="Password *" required="">
+                              <input class="form-control form-control-sm @error('password') is-invalid @enderror" name="password" id="loginPassword" type="password" placeholder="Password *" required="">
                             </div>
-
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                           </div>
                           <div class="col-12 col-md">
 
                             <!-- Remember -->
                             <div class="form-group">
                               <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" id="loginRemember" type="checkbox">
+                                <input class="custom-control-input" id="loginRemember" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="custom-control-label" for="loginRemember">
                                   Remember me
                                 </label>
@@ -84,18 +93,17 @@
 
                       <!-- Heading -->
                       <h6 class="mb-5">New Customer</h6>
-
                       <!-- Form -->
-                      <form>
+                      <form  method="POST" action="{{ route('register') }}">
                         <div class="row justify-content-center">
                           <div class="col-6">
-
+                            @csrf
                             <!-- Email -->
                             <div class="form-group">
                               <label class="sr-only" for="registerFirstName">
                                 Account type
                               </label>
-                              <select class="form-control form-control-sm" id="registerAcctype" name='acc_type' type="text" placeholder="First Name *" required="">
+                              <select class="form-control form-control-sm" id="registerAcctype" name='account_type' type="text" placeholder="First Name *" required="">
                                 <option value="">Account Type</option>
                                 <option value="buyer">Buyer</option>
                                 <option value="driver">Driver</option>
@@ -110,7 +118,7 @@
                               <label class="sr-only" for="registerFirstName">
                                 Full Name *
                               </label>
-                              <input class="form-control form-control-sm" id="registerFirstName" type="text" placeholder="First Name *" required="">
+                              <input class="form-control form-control-sm" id="registerFirstName" name="fullname" type="text" placeholder="First Name *" required="">
                             </div>
 
                           </div>
@@ -122,9 +130,13 @@
                               <label class="sr-only" for="registerEmail">
                                 Email Address *
                               </label>
-                              <input class="form-control form-control-sm" id="registerEmail" type="email" placeholder="Email Address *" required="">
+                              <input class="form-control form-control-sm @error('password') is-invalid @enderror" id="registerEmail" name="email" type="email" placeholder="Email Address *" required="">
                             </div>
-
+                            @error('email')
+                                <p class="text-danger pt-0" role="alert" style="padding: 0px">
+                                    <small>{{ $message }}</small>
+                                </p>
+                            @enderror
                           </div>
                           <div class="col-12">
 
@@ -133,7 +145,7 @@
                               <label class="sr-only" for="registerUsername">
                                 Username *
                               </label>
-                              <input class="form-control form-control-sm" id="registerUsername" type="text" placeholder="Username *" required="">
+                              <input class="form-control form-control-sm" id="registerUsername" type="text" name="username" placeholder="Username *" required="">
                             </div>
 
                           </div>
@@ -144,8 +156,13 @@
                               <label class="sr-only" for="registerPhone">
                                 Phone Number *
                               </label>
-                              <input class="form-control form-control-sm" id="registerPhone" type="text" placeholder="Phone Number *" required>
+                              <input class="form-control form-control-sm @error('password') is-invalid @enderror" id="registerPhone" type="text" name="phone_number" placeholder="Phone Number *" required>
                             </div>
+                            @error('phone_number')
+                                <p class="text-danger pt-0" role="alert" style="padding: 0px">
+                                    <small>{{ $message }}</small>
+                                </p>
+                            @enderror
 
                           </div>
                           <div class="col-12 col-md-6">
@@ -155,9 +172,13 @@
                               <label class="sr-only" for="registerPassword">
                                 Password *
                               </label>
-                              <input class="form-control form-control-sm" id="registerPassword" type="password" placeholder="Password *" required="">
+                              <input class="form-control form-control-sm @error('password') is-invalid @enderror" name="password" id="registerPassword" type="password" placeholder="Password *" required="">
                             </div>
-
+                            @error('password')
+                                <p class="text-danger pt-0" role="alert" style="padding: 0px">
+                                    <small>{{ $message }}</small>
+                                </p>
+                            @enderror
                           </div>
                           <div class="col-12 col-md-6">
 
@@ -166,7 +187,7 @@
                               <label class="sr-only" for="registerPasswordConfirm">
                                 Confirm Password *
                               </label>
-                              <input class="form-control form-control-sm" id="registerPasswordConfirm" type="password" placeholder="Confrm Password *" required="">
+                              <input class="form-control form-control-sm" id="registerPasswordConfirm" name="password_confirmation" type="password" placeholder="Confrm Password *" required="">
                             </div>
 
                           </div>

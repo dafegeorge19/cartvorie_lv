@@ -19,19 +19,19 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->string('billing_first_name');
-            $table->string('billing_other_names');
+            $table->string('billing_fullname');
+            $table->string('billing_username');
             $table->string('billing_state_id');
             $table->string('billing_area_id');
-            $table->string('billing_street_address');
+            $table->string('billing_account_type');
             $table->string('billing_phone_number');
             $table->string('billing_email');
 
-            $table->string('delivery_first_name');
-            $table->string('delivery_other_names');
+            $table->string('delivery_fullname');
+            $table->string('delivery_username');
             $table->string('delivery_state_id');
             $table->string('delivery_area_id');
-            $table->string('delivery_street_address');
+            $table->string('delivery_account_type');
             $table->string('delivery_phone_number');
             $table->string('delivery_email');
             $table->string('order_note')->nullable();

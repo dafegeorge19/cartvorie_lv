@@ -6663,7 +6663,7 @@ button.menu-toggle {
   position: relative;
   margin-left: -50vw;
   left: 50%;
-  background-color: #652f91;
+  background-color: #662D91;
   font-size: 0.875em;
   line-height: 2.714em;
   font-weight: 300;
@@ -22007,8 +22007,8 @@ form.woocommerce-checkout.checkout {
     max-width: 33.3333333333%; } }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  #billing_first_name_field,
-  #shipping_first_name_field,
+  #billing_fullname_field,
+  #shipping_fullname_field,
   #shipping_last_name_field,
   #billing_last_name_field,
   #billing_phone_field,

@@ -141,7 +141,7 @@
 				<div class="col">
 					<div class="form-group">
 						<label for="exampleFormControlSelect1">Enter Street Address</label>
-						<input type="text" name="street_address" class="form-control" placeholder="e.g. No 1, Kudang Street" required>
+						<input type="text" name="account_type" class="form-control" placeholder="e.g. No 1, Kudang Street" required>
 					</div>
 				</div>
 

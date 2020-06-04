@@ -34,8 +34,8 @@ class LoginController extends Controller
 
         $user = Auth::user();
         
-        if ($user->role == 'customer') {
-            return '/orders';
+        if ($user->role == 'buyer') {
+            return '/buyer';
         } else if($user->role == 'agent') {
             Auth::logout();
             return '/agent/all_agents';
@@ -44,7 +44,7 @@ class LoginController extends Controller
         } else if($user->role == 'superadmin') {
             return '/admin/dashboard';
         }
-        
+
     }
 
     /**

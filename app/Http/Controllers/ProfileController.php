@@ -30,19 +30,19 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'first_name' => 'required',
-            'other_names' => 'required',
+            'fullname' => 'required',
+            'username' => 'required',
             'state' => 'required|exists:states,id',
             'area' => 'required|exists:areas,id',
-            'street_address' => 'required',
+            'account_type' => 'required',
             'phone_number' => 'required|numeric',
             'password' => 'nullable|min:6|confirmed'
         ]);
 
         // update user
         $user = Auth::user();
-        $user->first_name = $request->first_name;
-        $user->other_names = $request->other_names;
+        $user->fullname = $request->fullname;
+        $user->username = $request->username;
         $user->phone_number = $request->phone_number;
         if($request->password != '') {
             $user->password = Hash::make($request->password);
@@ -54,7 +54,7 @@ class ProfileController extends Controller
         if($address){
             $address->state_id = $request->state;
             $address->area_id = $request->area;
-            $address->street_address = $request->street_address;
+            $address->account_type = $request->account_type;
             $address->save();
         }
 

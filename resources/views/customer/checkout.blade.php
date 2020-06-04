@@ -82,11 +82,11 @@
                                                             <h3>Billing Details</h3>
                                                             <div class="woocommerce-billing-fields__field-wrapper-outer">
                                                                 <div class="woocommerce-billing-fields__field-wrapper">
-                                                                    <p id="billing_first_name_field" class="form-row form-row-last validate-required">
-                                                                        <label class="" for="billing_first_name">First Name
+                                                                    <p id="billing_fullname_field" class="form-row form-row-last validate-required">
+                                                                        <label class="" for="billing_fullname">First Name
                                                                             <abbr title="required" class="required">*</abbr>
                                                                         </label>
-                                                                        <input type="text" value="{{ auth::user()->first_name ?? '' }}" placeholder="First Name" id="billing_first_name" name="billing_first_name" class="input-text text-capitalize">
+                                                                        <input type="text" value="{{ auth::user()->fullname ?? '' }}" placeholder="First Name" id="billing_fullname" name="billing_fullname" class="input-text text-capitalize">
                                                                         <small class="text-danger" role="alert">
                                                                             <strong id="billing_fn_error"></strong>
                                                                         </small>
@@ -95,7 +95,7 @@
                                                                         <label class="" for="billing_last_name">Other Names
                                                                             <abbr title="required" class="required">*</abbr>
                                                                         </label>
-                                                                        <input type="text" value="{{ auth::user()->other_names ?? '' }}" placeholder="Other Names" id="billing_other_names" name="billing_last_name" class="input-text text-capitalize">
+                                                                        <input type="text" value="{{ auth::user()->username ?? '' }}" placeholder="Other Names" id="billing_username" name="billing_last_name" class="input-text text-capitalize">
                                                                         <small class="text-danger" role="alert">
                                                                             <strong id="billing_on_error"></strong>
                                                                         </small>
@@ -147,7 +147,7 @@
                                                                         <label class="" for="billing_address_1">Street address
                                                                             <abbr title="required" class="required">*</abbr>
                                                                         </label>
-                                                                        <input type="text" value="{{ auth::user() ? auth::user()->addresses->first()->street_address : '' }}" placeholder="Street address" id="billing_street_address" name="billing_address_1" class="input-text text-capitalize">
+                                                                        <input type="text" value="{{ auth::user() ? auth::user()->addresses->first()->account_type : '' }}" placeholder="Street address" id="billing_account_type" name="billing_address_1" class="input-text text-capitalize">
                                                                         <small class="text-danger" role="alert">
                                                                             <strong id="billing_sa_error"></strong>
                                                                         </small>
@@ -215,11 +215,11 @@
                                                             </h3>
                                                             <div class="shipping_address collapse" id="shipping-address">
                                                                 <div class="woocommerce-shipping-fields__field-wrapper">
-                                                                    <p id="shipping_first_name_field" class="form-row form-row-first validate-required">
-                                                                        <label class="" for="delivery_first_name">First name
+                                                                    <p id="shipping_fullname_field" class="form-row form-row-first validate-required">
+                                                                        <label class="" for="delivery_fullname">First name
                                                                             <abbr title="required" class="required">*</abbr>
                                                                         </label>
-                                                                        <input type="text" autofocus="autofocus" autocomplete="given-name" value="" placeholder="First Name" id="delivery_first_name" name="delivery_first_name" class="input-text ">
+                                                                        <input type="text" autofocus="autofocus" autocomplete="given-name" value="" placeholder="First Name" id="delivery_fullname" name="delivery_fullname" class="input-text ">
                                                                         <small class="text-danger" role="alert">
                                                                             <strong id="delivery_fn_error"></strong>
                                                                         </small>
@@ -228,7 +228,7 @@
                                                                         <label class="" for="shipping_last_name">Other Names
                                                                             <abbr title="required" class="required">*</abbr>
                                                                         </label>
-                                                                        <input type="text" autocomplete="family-name" value="" placeholder="" id="delivery_other_names" name="shipping_last_name" class="input-text ">
+                                                                        <input type="text" autocomplete="family-name" value="" placeholder="" id="delivery_username" name="shipping_last_name" class="input-text ">
                                                                         <small class="text-danger" role="alert">
                                                                             <strong id="delivery_on_error"></strong>
                                                                         </small>
@@ -262,7 +262,7 @@
                                                                         <label class="" for="shipping_address_1">Street address
                                                                             <abbr title="required" class="required">*</abbr>
                                                                         </label>
-                                                                        <input type="text" autocomplete="address-line1" value="" placeholder="House number and street name" id="delivery_street_address" name="shipping_address_1" class="input-text ">
+                                                                        <input type="text" autocomplete="address-line1" value="" placeholder="House number and street name" id="delivery_account_type" name="shipping_address_1" class="input-text ">
                                                                         <small class="text-danger" role="alert">
                                                                             <strong id="delivery_sa_error"></strong>
                                                                         </small>

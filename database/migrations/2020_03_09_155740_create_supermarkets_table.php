@@ -26,7 +26,7 @@ class CreateSupermarketsTable extends Migration
             $table->unsignedBigInteger('area_id');
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
 
-            $table->string('street_address');
+            $table->string('account_type');
 
             $table->softDeletes();
             $table->timestamps();

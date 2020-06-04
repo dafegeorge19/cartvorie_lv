@@ -60,7 +60,7 @@
                         <div class="">
                             <a href="{{ url('/') }}" class="custom-logo-link" rel="home">
                               <img src="{{url('asset/img/logo.jpeg')}}" width="100" alt="">
-                              <span class="text-white"> <i>Shopping made easy & fun....</i></span>
+                              <span class="text-white"> <i style="color: black;">Shopping made easy & fun....</i></span>
                             </a>
                             <!-- /.custom-logo-link -->
                         </div>
@@ -79,9 +79,9 @@
                                     <a title="New Arrivals" href="home-v4.html">All Stores</a>
                                 </li>
                                 @foreach($supermarkets->take(10) as $supermarket)
-                                    <li class="menu-item animate-dropdown text-capitalize">
-                                        <a title="New Arrivals" href="{{ url('/store', [$supermarket->slug]) }}">{{$supermarket->name}}</a>
-                                    </li>
+                                <li class="menu-item animate-dropdown text-capitalize">
+                                  <a title="New Arrivals" href="{{ url('/store', [$supermarket->slug]) }}">{{$supermarket->name}}</a>
+                                </li>
                                 @endforeach
 
                             </ul>
@@ -96,7 +96,7 @@
                                 <div class="input-group-addon search-categories popover-header">
                                     <select name='store_id' id='product_cat' class='postform resizeselect' style="color: white">
                                         <option value='' selected='selected' style="color: black">All Stores</option>
-                                        @foreach($supermarkets as $supermarket)
+                                      @foreach($supermarkets as $supermarket)
                                             <option class="level-0 text-capitalize" value="{{$supermarket->id}}" style="color: black">{{$supermarket->name}}</option>
                                         @endforeach
                                     </select>
@@ -154,7 +154,7 @@
                             @auth
                                 <li class="animate-dropdown dropdown " style="display: inline-block">
                                     <a class="cart-contents" href="{{ url('/cart') }}" data-toggle="dropdown" title="View your shopping cart">
-                                        <i class="tm tm-login-register" style="color: white"></i>
+                                        <i class="tm tm-login-register" style="color: #652f91"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-mini-cart">
                                         <li>
@@ -280,11 +280,11 @@
                                             <li class="menu-item animate-dropdown">
                                                 <a title="All Categories" href="{{ url('/categories') }}">All Categories</a>
                                             </li>
-                                            @foreach($categories as $category)
+                                            {{-- @foreach($categories as $category)
                                                 <li class="menu-item animate-dropdown">
                                                     <a title="{{ $category->name }}" href="{{url('/stores') . '?' . http_build_query(['category_name' => $category->name])}}">{{ $category->name }}</a>
                                                 </li>
-                                            @endforeach
+                                            @endforeach --}}
                                         </ul>
                                         <!-- .dropdown-menu -->
                                     </li>
@@ -402,11 +402,11 @@
                                             <li class="highlight menu-item animate-dropdown">
                                                 <a title="Value of the Day" href="{{ url('/stores') }}">All Stores</a>
                                             </li>
-                                            @foreach($supermarkets as $supermarket)
+                                          {{--  @foreach($supermarkets as $supermarket)
                                             <li class="highlight menu-item animate-dropdown text-capitalize">
                                                 <a title="Top 100 Offers" href="{{ url('/store', [$supermarket->slug]) }}">{{$supermarket->name}}</a>
                                             </li>
-                                            @endforeach
+                                            @endforeach --}}
                                         </ul>
                                     </div>
                                     <!-- .handheld-navigation-menu -->
@@ -1027,14 +1027,14 @@
                 $('#t_c_error').html('')
                 $('#validation_error').html('')
 
-                let billing_first_name = $('#billing_first_name').val()
-                if(billing_first_name == '' || billing_first_name == null) {
+                let billing_fullname = $('#billing_fullname').val()
+                if(billing_fullname == '' || billing_fullname == null) {
                     $('#billing_fn_error').html('You must enter your Billing First Name')
                     validation_errors = 1
                 }
 
-                let billing_other_names = $('#billing_other_names').val()
-                if(billing_other_names == '' || billing_other_names == null) {
+                let billing_username = $('#billing_username').val()
+                if(billing_username == '' || billing_username == null) {
                     $('#billing_on_error').html('You must enter your Billing Other Names')
                     validation_errors = 1
                 }
@@ -1051,8 +1051,8 @@
                     validation_errors = 1
                 }
 
-                let billing_street_address = $('#billing_street_address').val()
-                if(billing_street_address == '' || billing_street_address == null) {
+                let billing_account_type = $('#billing_account_type').val()
+                if(billing_account_type == '' || billing_account_type == null) {
                     $('#billing_sa_error').html('You must a enter billing street address')
                     validation_errors = 1
                 }
@@ -1078,14 +1078,14 @@
                 // if the user select ship to different address then we validate the delivery address fields
                 if($('#deliver_to_diferent_address').is(":checked")) {
 
-                    let delivery_first_name = $('#delivery_first_name').val()
-                    if(delivery_first_name == '' || delivery_first_name == null) {
+                    let delivery_fullname = $('#delivery_fullname').val()
+                    if(delivery_fullname == '' || delivery_fullname == null) {
                         $('#delivery_fn_error').html('You must enter your delivery first name')
                         validation_errors = 1
                     }
 
-                    let delivery_other_names = $('#delivery_other_names').val()
-                    if(delivery_other_names == '' || delivery_other_names == null) {
+                    let delivery_username = $('#delivery_username').val()
+                    if(delivery_username == '' || delivery_username == null) {
                         $('#delivery_on_error').html('You must enter your delivery other names')
                         validation_errors = 1
                     }
@@ -1102,8 +1102,8 @@
                         validation_errors = 1
                     }
 
-                    let delivery_street_address = $('#delivery_street_address').val()
-                    if(delivery_street_address == '' || delivery_street_address == null || delivery_street_address == undefined) {
+                    let delivery_account_type = $('#delivery_account_type').val()
+                    if(delivery_account_type == '' || delivery_account_type == null || delivery_account_type == undefined) {
                         $('#delivery_sa_error').html('You must a enter delivery street address')
                         validation_errors = 1
                     }
@@ -1185,19 +1185,19 @@
                                 create_account = 1
                             }
 
-                            let billing_first_name      = $('#billing_first_name').val()
-                            let billing_other_names     = $('#billing_other_names').val()
+                            let billing_fullname      = $('#billing_fullname').val()
+                            let billing_username     = $('#billing_username').val()
                             let billing_state           = $('#billing_state').val()
                             let billing_area            = $('#billing_area').val()
-                            let billing_street_address  = $('#billing_street_address').val()
+                            let billing_account_type  = $('#billing_account_type').val()
                             let billing_phone_number    = $('#billing_phone_number').val()
                             let billing_email           = $('#billing_email').val()
                             let account_password        = $('#account_password').val()
-                            let delivery_first_name     = $('#delivery_first_name').val()
-                            let delivery_other_names    = $('#delivery_other_names').val()
+                            let delivery_fullname     = $('#delivery_fullname').val()
+                            let delivery_username    = $('#delivery_username').val()
                             let delivery_state          = $('#delivery_state').val()
                             let delivery_area           = $('#delivery_area').val()
-                            let delivery_street_address = $('#delivery_street_address').val()
+                            let delivery_account_type = $('#delivery_account_type').val()
                             let delivery_phone_number   = $('#delivery_phone_number').val()
                             let delivery_email          = $('#delivery_email').val()
                             let order_note              = $('#order_note').val()
@@ -1205,19 +1205,19 @@
                             let delivery_shipping_info = {
                                 'create_account'             : create_account,
                                 'deliver_to_diferent_address': ship_to_diferent_address,
-                                'billing_first_name'         : billing_first_name,
-                                'billing_other_names'        : billing_other_names,
+                                'billing_fullname'         : billing_fullname,
+                                'billing_username'        : billing_username,
                                 'billing_state'              : billing_state,
                                 'billing_area'               : billing_area,
-                                'billing_street_address'     : billing_street_address,
+                                'billing_account_type'     : billing_account_type,
                                 'billing_phone_number'       : billing_phone_number,
                                 'billing_email'              : billing_email,
                                 'account_password'           : account_password,
-                                'delivery_first_name'        : delivery_first_name,
-                                'delivery_other_names'       : delivery_other_names,
+                                'delivery_fullname'        : delivery_fullname,
+                                'delivery_username'       : delivery_username,
                                 'delivery_state'             : delivery_state,
                                 'delivery_area'              : delivery_area,
-                                'delivery_street_address'    : delivery_street_address,
+                                'delivery_account_type'    : delivery_account_type,
                                 'delivery_phone_number'      : delivery_phone_number,
                                 'delivery_email'             : delivery_email,
                                 'order_note'                 : order_note,
@@ -1247,7 +1247,7 @@
 
             function payWithPaystack(pk_key, amount, currency, total_product_amount, delivery_fee, total_products_weight, delivery_shipping_info){
 
-                let customer_full_name = delivery_shipping_info['billing_first_name'] + delivery_shipping_info['billing_other_names']
+                let customer_full_name = delivery_shipping_info['billing_fullname'] + delivery_shipping_info['billing_username']
 
                 var handler = PaystackPop.setup({
                     key: pk_key,

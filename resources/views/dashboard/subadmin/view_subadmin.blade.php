@@ -41,18 +41,18 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="first_name">First Name</label>
+                            <label for="fullname">First Name</label>
                             <div class="form-control text-capitalize">
-                                {{$subadmin->first_name}}
+                                {{$subadmin->fullname}}
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="other_names">Other Names<span class="text-danger">*</span></label>
+                            <label for="username">Other Names<span class="text-danger">*</span></label>
                             <div class="form-control text-capitalize">
-                                {{$subadmin->other_names}}
+                                {{$subadmin->username}}
                             </div>
                         </div>
                     </div>
@@ -96,9 +96,9 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="street_address">Steet Address<span class="text-danger">*</span></label>
+                            <label for="account_type">Steet Address<span class="text-danger">*</span></label>
                             <div class="form-control text-capitalize">
-                                {{$subadmin->addresses->first()->street_address}}
+                                {{$subadmin->addresses->first()->account_type}}
                             </div>
                         </div>
                       </div>

@@ -50,31 +50,31 @@ class SubadminController extends Controller
     public function store_subadmin(Request $request)
     {
         $validatedData = $request->validate([
-            // 'first_name'     => ['required', 'max:255'],
-            // 'other_names'    => ['required', 'max:255'],
+            // 'fullname'     => ['required', 'max:255'],
+            // 'username'    => ['required', 'max:255'],
             // 'phone_number'   => ['required', 'max:255'],
             'email'          => ['required', 'unique:users'],
             // 'state'          => ['required'],
             // 'area'           => ['required'],
-            // 'street_address' => ['required'],
+            // 'account_type' => ['required'],
             // 'image'          => ['required'],
             // 'password'       => ['required'],
         ]);
 
         
-        $first_name     = $request->first_name;
-        $other_names    = $request->other_names;
+        $fullname     = $request->fullname;
+        $username    = $request->username;
         $phone_number   = $request->phone_number;
         $email          = $request->email;
         $state_id       = $request->state;
         $area_id        = $request->area;
-        $street_address = $request->street_address;
+        $account_type = $request->account_type;
         $password        = $request->password;
         
         
         $subadmin = new User();
-        $subadmin->first_name = $first_name;
-        $subadmin->other_names = $other_names;
+        $subadmin->fullname = $fullname;
+        $subadmin->username = $username;
         $subadmin->phone_number = $phone_number;
         $subadmin->email  = $email;
         $subadmin->email_verified_at  = now();
@@ -87,7 +87,7 @@ class SubadminController extends Controller
             $subadmin->addresses()->create([
                 'state_id'       => $state_id,
                 'area_id'        => $area_id,
-                'street_address' => $street_address
+                'account_type' => $account_type
             ]);
 
             //upload profile image
@@ -178,13 +178,13 @@ class SubadminController extends Controller
     public function update_subadmin(Request $request, $id)
     {
         // $validatedData = $request->validate([
-        //     'first_name'     => ['required', 'max:255'],
-        //     'other_names'    => ['required', 'max:255'],
+        //     'fullname'     => ['required', 'max:255'],
+        //     'username'    => ['required', 'max:255'],
         //     'phone_number'   => ['required', 'max:255'],
         //     'email'          => ['required', 'max:255'],
         //     'state'          => ['required'],
         //     'area'           => ['required'],
-        //     'street_address' => ['required'],
+        //     'account_type' => ['required'],
         //     'verify_email'   => ['required'],
         //     'image'          => ['required'],
         //     // 'cv'             => ['required'],
@@ -195,17 +195,17 @@ class SubadminController extends Controller
 
         if($subadmin) {
 
-            $first_name     = $request->first_name;
-            $other_names    = $request->other_names;
+            $fullname     = $request->fullname;
+            $username    = $request->username;
             $phone_number   = $request->phone_number;
             $email          = $request->email;
             $state_id       = $request->state;
             $area_id        = $request->area;
-            $street_address = $request->street_address;
+            $account_type = $request->account_type;
             $password       = $request->password;
             
-            $subadmin->first_name   = $first_name;
-            $subadmin->other_names  = $other_names;
+            $subadmin->fullname   = $fullname;
+            $subadmin->username  = $username;
             $subadmin->phone_number = $phone_number;
             $subadmin->email        = $email;
 
@@ -222,7 +222,7 @@ class SubadminController extends Controller
 
                     $subadmin_address->state_id       = $state_id;
                     $subadmin_address->area_id        = $area_id;
-                    $subadmin_address->street_address = $street_address;
+                    $subadmin_address->account_type = $account_type;
                     $subadmin_address->save();
 
                 } else { //if for some reason the subadmin dont have address create one with the edit data
@@ -230,7 +230,7 @@ class SubadminController extends Controller
                     $subadmin->addresses()->create([
                         'state_id'       => $state_id,
                         'area_id'        => $area_id,
-                        'street_address' => $street_address
+                        'account_type' => $account_type
                     ]);
 
                 }

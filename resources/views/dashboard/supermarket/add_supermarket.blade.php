@@ -88,9 +88,9 @@
 
                       <div class="col-md-6">
                         <div class="form-group">
-                            <label for="street_address">Steet Address<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="street_address" name="street_address" placeholder="e.g No 1, Kudang Street" value="{{ old('street_address') }}" required>
-                            @error('street_address')
+                            <label for="account_type">Steet Address<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="account_type" name="account_type" placeholder="e.g No 1, Kudang Street" value="{{ old('account_type') }}" required>
+                            @error('account_type')
                                 <small class="text-red" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </small>

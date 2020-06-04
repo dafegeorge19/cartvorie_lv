@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
             ['role', '=', 'subadmin']
         ])->orderBy('created_at', 'desc')->paginate(12);
 
-        
+
 
         View::share('categories', $categories);
         View::share('supermarkets', $supermarkets);

@@ -107,10 +107,10 @@ class PaymentController extends Controller
             foreach($addresses as $address) {
                 $state          = $address->state->name;
                 $area           = $address->area->name;
-                $street_address = $address->street_address;
+                $account_type = $address->account_type;
 
                 $data[$counter]['id']      = $address->id;
-                $data[$counter]['address'] = $street_address . ', ' . $area . ', ' . $state;
+                $data[$counter]['address'] = $account_type . ', ' . $area . ', ' . $state;
                 $counter++;
 
             }
@@ -141,8 +141,8 @@ class PaymentController extends Controller
             $hased_password = Hash::make($password);
 
             $create_user = new User();
-            $create_user->first_name        = $delivery_shipping_info['billing_first_name'];
-            $create_user->other_names       = $delivery_shipping_info['billing_other_names'];
+            $create_user->fullname        = $delivery_shipping_info['billing_fullname'];
+            $create_user->username       = $delivery_shipping_info['billing_username'];
             $create_user->phone_number      = $delivery_shipping_info['billing_phone_number'];
             $create_user->email             = $delivery_shipping_info['billing_email'];
             $create_user->email_verified_at = now();
@@ -161,28 +161,28 @@ class PaymentController extends Controller
             $order->user_id = Auth::user()->id;
         }
 
-        $order->billing_first_name     = $delivery_shipping_info['billing_first_name'];
-        $order->billing_other_names    = $delivery_shipping_info['billing_other_names'];
+        $order->billing_fullname     = $delivery_shipping_info['billing_fullname'];
+        $order->billing_username    = $delivery_shipping_info['billing_username'];
         $order->billing_state_id       = $delivery_shipping_info['billing_state'];
         $order->billing_area_id        = $delivery_shipping_info['billing_area'];
-        $order->billing_street_address = $delivery_shipping_info['billing_street_address'];
+        $order->billing_account_type = $delivery_shipping_info['billing_account_type'];
         $order->billing_phone_number   = $delivery_shipping_info['billing_phone_number'];
         $order->billing_email          = $delivery_shipping_info['billing_email'];
 
         if($delivery_shipping_info['deliver_to_diferent_address']) { // if the user request to deliver to different address
-            $order->delivery_first_name     = $delivery_shipping_info['delivery_first_name'];
-            $order->delivery_other_names    = $delivery_shipping_info['delivery_other_names'];
+            $order->delivery_fullname     = $delivery_shipping_info['delivery_fullname'];
+            $order->delivery_username    = $delivery_shipping_info['delivery_username'];
             $order->delivery_state_id       = $delivery_shipping_info['delivery_state'];
             $order->delivery_area_id        = $delivery_shipping_info['delivery_area'];
-            $order->delivery_street_address = $delivery_shipping_info['delivery_street_address'];
+            $order->delivery_account_type = $delivery_shipping_info['delivery_account_type'];
             $order->delivery_phone_number   = $delivery_shipping_info['delivery_phone_number'];
             $order->delivery_email          = $delivery_shipping_info['delivery_email'];
         } else { // else just fill the billing address in the dilivery fields
-            $order->delivery_first_name     = $delivery_shipping_info['billing_first_name'];
-            $order->delivery_other_names    = $delivery_shipping_info['billing_other_names'];
+            $order->delivery_fullname     = $delivery_shipping_info['billing_fullname'];
+            $order->delivery_username    = $delivery_shipping_info['billing_username'];
             $order->delivery_state_id       = $delivery_shipping_info['billing_state'];
             $order->delivery_area_id        = $delivery_shipping_info['billing_area'];
-            $order->delivery_street_address = $delivery_shipping_info['billing_street_address'];
+            $order->delivery_account_type = $delivery_shipping_info['billing_account_type'];
             $order->delivery_phone_number   = $delivery_shipping_info['billing_phone_number'];
             $order->delivery_email          = $delivery_shipping_info['billing_email'];
         }

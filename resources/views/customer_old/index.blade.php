@@ -31,7 +31,7 @@
 		<div class="item item3"> 
 			<div class="container">
 				<div class="carousel-caption">
-					<h3><sp><span>Skipoutlet</span> make shopping fun</sp></h3>
+					<h3><sp><span>Cartvorie</span> make shopping fun</sp></h3>
 					<a class="hvr-outline-out button2" href="{{ url('/products') }}">Shop Now </a>
 				</div>
 			</div>

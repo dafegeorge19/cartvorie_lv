@@ -47,18 +47,18 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="first_name">Agent First Name</label>
+                            <label for="fullname">Agent First Name</label>
                             <div class="form-control text-capitalize">
-                                {{$agent->first_name}}
+                                {{$agent->fullname}}
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="other_names">Other Names<span class="text-danger">*</span></label>
+                            <label for="username">Other Names<span class="text-danger">*</span></label>
                             <div class="form-control text-capitalize">
-                                {{$agent->other_names}}
+                                {{$agent->username}}
                             </div>
                         </div>
                     </div>
@@ -102,9 +102,9 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="street_address">Steet Address<span class="text-danger">*</span></label>
+                            <label for="account_type">Steet Address<span class="text-danger">*</span></label>
                             <div class="form-control text-capitalize">
-                                {{$agent->addresses->first()->street_address}}
+                                {{$agent->addresses->first()->account_type}}
                             </div>
                         </div>
                       </div>

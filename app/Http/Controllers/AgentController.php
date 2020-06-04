@@ -44,32 +44,32 @@ class AgentController extends Controller
     public function store_agent(Request $request)
     {
         $validatedData = $request->validate([
-            'first_name'     => ['required', 'max:50'],
-            'other_names'    => ['required', 'max:50'],
+            'fullname'     => ['required', 'max:50'],
+            'username'    => ['required', 'max:50'],
             'phone_number'   => ['required', 'max:20'],
             'email'          => ['required', 'unique:users'],
             'state'          => ['required', 'exists:states,id'],
             'area'           => ['required', 'exists:areas,id'],
-            'street_address' => ['required', 'max:100'],
+            'account_type' => ['required', 'max:100'],
             'image'          => ['required', 'mimes:jpeg,jpg,png'],
             'cv'             => ['required', 'mimes:doc,docx,pdf'],
             'password'       => ['required', 'confirmed'],
         ]);
 
         
-        $first_name     = $request->first_name;
-        $other_names    = $request->other_names;
+        $fullname     = $request->fullname;
+        $username    = $request->username;
         $phone_number   = $request->phone_number;
         $email          = $request->email;
         $state_id       = $request->state;
         $area_id        = $request->area;
-        $street_address = $request->street_address;
+        $account_type = $request->account_type;
         $password       = $request->password;
         
         
         $agent                    = new User();
-        $agent->first_name        = $first_name;
-        $agent->other_names       = $other_names;
+        $agent->fullname        = $fullname;
+        $agent->username       = $username;
         $agent->phone_number      = $phone_number;
         $agent->email             = $email;
         $agent->email_verified_at = now();
@@ -82,7 +82,7 @@ class AgentController extends Controller
             $agent->addresses()->create([
                 'state_id'       => $state_id,
                 'area_id'        => $area_id,
-                'street_address' => $street_address
+                'account_type' => $account_type
             ]);
             
             // upload cv and save agent details

@@ -41,9 +41,9 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="first_name">First Name<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="first_name" name="first_name" placeholder="Enter agents's first name" value="{{ old('first_name') }}" required autofocus>
-                            @error('first_name')
+                            <label for="fullname">First Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control @error('fullname') is-invalid @enderror" id="fullname" name="fullname" placeholder="Enter agents's first name" value="{{ old('fullname') }}" required autofocus>
+                            @error('fullname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -53,9 +53,9 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="other_names">Other Names<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control @error('other_names') is-invalid @enderror" id="other_names" name="other_names" placeholder="Enter agent's other names" value="{{ old('other_names') }}" required>
-                            @error('other_names')
+                            <label for="username">Other Names<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Enter agent's other names" value="{{ old('username') }}" required>
+                            @error('username')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -121,9 +121,9 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="street_address">Steet Address<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="street_address" name="street_address" placeholder="e.g No 1, Kudang Street" value="{{ old('street_address') }}" required>
-                            @error('street_address')
+                            <label for="account_type">Steet Address<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="account_type" name="account_type" placeholder="e.g No 1, Kudang Street" value="{{ old('account_type') }}" required>
+                            @error('account_type')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

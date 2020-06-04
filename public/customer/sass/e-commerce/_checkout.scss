@@ -108,8 +108,8 @@ form.woocommerce-checkout.checkout {
 
 @include media-breakpoint-up(md) {
 	@include media-breakpoint-down(lg) {
-		#billing_first_name_field,
-		#shipping_first_name_field,
+		#billing_fullname_field,
+		#shipping_fullname_field,
 		#shipping_last_name_field,
 		#billing_last_name_field,
 		#billing_phone_field,

@@ -24,6 +24,12 @@ Route::view('/about_us', 'customer.about_us');
 Route::view('/delivery_terms', 'customer.delivery_terms');
 Route::view('/terms_and_conditions', 'customer.terms_and_conditions');
 
+Route::get('/drop', function()
+{
+  \Schema::disableForeignKeyConstraints();
+\Schema::drop('users');
+});
+
 
 // my orders
 Route::get('/orders', 'HomeController@orders')->middleware('auth');
@@ -45,7 +51,7 @@ Route::get('/product/{slug}', 'ProductsController@view_single_product');
 Route::get('/stores', 'ProductsController@stores');
 Route::get('/store/{slug}', 'ProductsController@store');
 
-// view 
+// view
 Route::get('/categories', 'ProductsController@categories');
 Route::post('/supermarket_categories', 'ProductsController@supermarket_categories');
 
@@ -82,7 +88,15 @@ Route::get('/order_completed/{order_id}', 'PaymentController@order_completed');
 
 Route::view('test', 'test');
 
+Route::prefix('buyer')->group(function () {
+  Route::view('/', 'buyer.index');
+  Route::get('/edit_profile', 'ProfileController@edit')->middleware('auth');
+  Route::post('/update_profile', 'ProfileController@update')->middleware('auth');
 
+});
+Route::prefix('admin')->group(function () {
+
+});
 //routes for admin dashbaords
     //admin dashboard routes
 Route::get('admin/dashboard', 'Dashboard\DashboardController@index')->middleware('auth');

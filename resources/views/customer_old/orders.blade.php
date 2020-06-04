@@ -23,7 +23,7 @@
                                     <p><strong>Date:</strong> {{ $order->created_at}} </p>
                                     <p><strong>Products Amount:</strong> ₦{{ $order->total_products_amount}} </p>
                                     <p><strong>Delivery Fee:</strong> ₦{{ $order->delivery_fee }} </p>
-                                    <p><strong>Delivery Address:</strong> {{ $order->delivery_street_address }}, {{ $order->area->name }}, {{ $order->state->name }} </p>
+                                    <p><strong>Delivery Address:</strong> {{ $order->delivery_account_type }}, {{ $order->area->name }}, {{ $order->state->name }} </p>
                                     <p><strong>Items:</strong>
                                         @foreach($order->order_items as $order_items)
                                             {{$order_items->product->name}} X {{$order_items->quantity}},

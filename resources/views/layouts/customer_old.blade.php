@@ -147,7 +147,7 @@ p.copy-right {
 		    
 			
 			<li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0808888888</li>
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@skipoutlet.com</a>  <i class="fa fa-facebook" aria-hidden="true"></i>   <i class="fa fa-twitter" aria-hidden="true"></i>   <i class="fa fa-instagram" aria-hidden="true"></i>   <i class="fa fa-linkedin" aria-hidden="true"></i></li>
+			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@cartvorie.com</a>  <i class="fa fa-facebook" aria-hidden="true"></i>   <i class="fa fa-twitter" aria-hidden="true"></i>   <i class="fa fa-instagram" aria-hidden="true"></i>   <i class="fa fa-linkedin" aria-hidden="true"></i></li>
 
 		</ul>
 	</div>
@@ -159,7 +159,7 @@ p.copy-right {
 	<div class="">
 
 		<div class="col-md-4 ">
-			<img src="{{ asset('/skipoutlet_logo.png') }}" />
+			<img src="{{ asset('/cartvorie_logo.png') }}" />
 		</div>
 
 		<div>
@@ -447,7 +447,7 @@ p.copy-right {
 							</div>
 							<div class="w3-address-right">
 								<h6>Email Address</h6>
-								<p>Email :<a href="mailto:example@email.com"> info@skipoutlet.com</a></p>
+								<p>Email :<a href="mailto:example@email.com"> info@cartvorie.com</a></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>

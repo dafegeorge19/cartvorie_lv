@@ -57,8 +57,8 @@
                 <tbody>
                     @foreach($customers as $customer)
                         <tr class="text-capitalize">
-                            <td>{{ $customer->first_name }}</td>
-                            <td>{{ $customer->other_names }}</td>
+                            <td>{{ $customer->fullname }}</td>
+                            <td>{{ $customer->username }}</td>
                             <td>{{ $customer->phone_number }}</td>
                             <td>{{ $customer->email }}</td>
                             <td class="d-none">

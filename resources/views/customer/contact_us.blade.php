@@ -40,7 +40,7 @@
                                                                     </label>
                                                                     <br>
                                                                     <span class="wpcf7-form-control-wrap first-name">
-                                                                        <input type="text" value="" name="first_name" required>
+                                                                        <input type="text" value="" name="fullname" required>
                                                                     </span>
                                                                 </div>
                                                                 <!-- .col -->
@@ -117,7 +117,7 @@
                                                     <h2 class="contact-page-title">Our Contacts</h2>
                                                     <p> Address: Plot 809, Dahiru Musdafa Boulevard Wuye, Abuja.
                                                         <br> Support: 07043434010
-                                                        <br> Email: <a href="mailto:info@skipoutlet.com">info@skipoutlet.com</a>
+                                                        <br> Email: <a href="mailto:info@cartvorie.com">info@cartvorie.com</a>
                                                     </p>
                                                 </div>
                                             </div>

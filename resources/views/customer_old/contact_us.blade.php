@@ -24,7 +24,7 @@
                     <div class="mail-agileits-w3layouts">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         <div class="contact-right">
-                            <p>Mail </p><a href="mailto:info@example.com">info@skipoutlet.com</a>
+                            <p>Mail </p><a href="mailto:info@example.com">info@cartvorie.com</a>
                         </div>
                         <div class="clearfix"> </div>
                     </div>

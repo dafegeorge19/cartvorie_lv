@@ -27,7 +27,7 @@ class SupermarketTableSeeder extends Seeder
                 'description'    => $faker->sentence($nbWords = rand(10, 20)),
                 'state_id'       => 1,
                 'area_id'        => rand(1, 4),
-                'street_address' => $faker->streetAddress,
+                'account_type' => $faker->streetAddress,
                 'created_at'     => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null)
             ];
 

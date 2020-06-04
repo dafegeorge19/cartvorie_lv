@@ -46,7 +46,7 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p15t es-p15b" align="center">
-                                                                                        <h1>A Contact Form Was Submited On SkipOutlet</h1>
+                                                                                        <h1>A Contact Form Was Submited On Cartvorie</h1>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -86,7 +86,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text">
-                                                                                        <p>{{$request->first_name}}</p>
+                                                                                        <p>{{$request->fullname}}</p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>

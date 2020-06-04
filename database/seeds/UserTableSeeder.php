@@ -21,17 +21,17 @@ class UserTableSeeder extends Seeder
         // create one user
         DB::table('users')->insert([
             [
-                'first_name'   => 'jane',
-                'other_names'  => 'boss girl',
+                'fullname'   => 'jane',
+                'username'  => 'boss girl',
                 'phone_number' => '08123432323',
-                'email'        => 'admin@skipoutlet.com',
+                'email'        => 'admin@cartvorie.com',
                 'role'         => 'superadmin',
                 'password'     => Hash::make('11111111'),
                 'created_at'   => now()
             ],
             [
-                'first_name'   => 'john',
-                'other_names'  => 'doe',
+                'fullname'   => 'john',
+                'username'  => 'doe',
                 'phone_number' => '08123432323',
                 'email'        => 'john.doe@mail.com',
                 'role'         => 'customer',
@@ -50,8 +50,8 @@ class UserTableSeeder extends Seeder
 
         for($i = 3; $i <= 52; $i++) {
             $customers[] = [
-                'first_name'        => $faker->firstNameMale,
-                'other_names'       => $faker->lastName . ' ' . $faker->lastName,
+                'fullname'        => $faker->firstNameMale,
+                'username'       => $faker->lastName . ' ' . $faker->lastName,
                 'phone_number'      => $faker->e164PhoneNumber,
                 'email'             => $faker->freeEmail,
                 'email_verified_at' => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
@@ -74,8 +74,8 @@ class UserTableSeeder extends Seeder
             
             // temporarily store all generated users into users variable
             $agents[] = [
-                'first_name'        => $faker->firstNameMale,
-                'other_names'       => $faker->lastName . ' ' . $faker->lastName,
+                'fullname'        => $faker->firstNameMale,
+                'username'       => $faker->lastName . ' ' . $faker->lastName,
                 'phone_number'      => $faker->e164PhoneNumber,
                 'email'             => $faker->freeEmail,
                 'email_verified_at' => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
@@ -97,8 +97,8 @@ class UserTableSeeder extends Seeder
         for($i = 103; $i <= 122; $i++) {
             // temporarily store all generated subadmin into users variable
             $subadmin[] = [
-                'first_name'        => $faker->firstNameMale,
-                'other_names'       => $faker->lastName . ' ' . $faker->lastName,
+                'fullname'        => $faker->firstNameMale,
+                'username'       => $faker->lastName . ' ' . $faker->lastName,
                 'phone_number'      => $faker->e164PhoneNumber,
                 'email'             => $faker->freeEmail,
                 'email_verified_at' => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
@@ -125,7 +125,7 @@ class UserTableSeeder extends Seeder
                 'user_id'        => $i,
                 'state_id'       => 1,
                 'area_id'        => rand(1, 3),
-                'street_address' => $faker->streetAddress,
+                'account_type' => $faker->streetAddress,
             ];
         }
 

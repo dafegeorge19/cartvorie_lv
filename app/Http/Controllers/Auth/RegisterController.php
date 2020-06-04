@@ -59,16 +59,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+      // dd($data);
         return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'other_names' => ['required', 'string', 'max:255'],
+            'fullname' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'state' => ['required', 'exists:states,id'],
-            'area' => ['required', 'exists:areas,id'],
-            'street_address' => ['required', 'string', 'max:255'],
-            'agreeTerms' => ['required']
+            'account_type' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -81,17 +79,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'first_name' => $data['first_name'],
-            'other_names' => $data['other_names'],
+            'fullname' => $data['fullname'],
+            'username' => $data['username'],
             'phone_number' => $data['phone_number'],
             'email' => $data['email'],
-            'role' => 'customer',
+            'role' => $data['account_type'],
             'password' => Hash::make($data['password']),
 
-            
+
         ]);
 
-        
+
     }
 
     /**
@@ -103,40 +101,40 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        DB::table('addresses')->insert([
-            'user_id' => Auth::user()->id,
-            'state_id' => $request->state,
-            'area_id' => $request->area,
-            'street_Address' => $request->street_address,
-        ]);
+        // DB::table('addresses')->insert([
+        //     'user_id' => Auth::user()->id,
+        //     'state_id' => $request->state,
+        //     'area_id' => $request->area,
+        //     'street_Address' => $request->account_type,
+        // ]);
     }
 
     public function get_all_states (Request $request) {
 
-        if($request->ajax()){
-            
-            $all_states = State::all();
-
-            return response()->json($all_states);
-        }
+        // if($request->ajax()){
+        //
+        //     $all_states = State::all();
+        //
+        //     return response()->json($all_states);
+        // }
     }
 
     public function get_state_areas (Request $request) {
 
-        if($request->ajax()){
-
-            $state_id = $request->id;
-
-            if($state_id) {
-                $state = State::find($state_id);
-                if($state) {
-                    $state_areas = $state->areas;
-                    return response()->json($state_areas);
-                }
-            }
-
-            return response()->json();
-            
-        }
+        // if($request->ajax()){
+        //
+        //     $state_id = $request->id;
+        //
+        //     if($state_id) {
+        //         $state = State::find($state_id);
+        //         if($state) {
+        //             $state_areas = $state->areas;
+        //             return response()->json($state_areas);
+        //         }
+        //     }
+        //
+        //     return response()->json();
+        //
+        // }
     }
 }

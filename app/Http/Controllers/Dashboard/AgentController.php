@@ -51,13 +51,13 @@ class AgentController extends Controller
     public function store_agent(Request $request)
     {
         $validatedData = $request->validate([
-            'first_name'     => ['required', 'max:255'],
-            'other_names'    => ['required', 'max:255'],
+            'fullname'     => ['required', 'max:255'],
+            'username'    => ['required', 'max:255'],
             'phone_number'   => ['required', 'max:255'],
             'email'          => ['required', 'unique:users'],
             'state'          => ['required'],
             'area'           => ['required'],
-            'street_address' => ['required'],
+            'account_type' => ['required'],
             'verify_email'   => ['required'],
             // 'image'          => ['required'],
             'cv'             => ['required'],
@@ -65,20 +65,20 @@ class AgentController extends Controller
         ]);
 
         
-        $first_name     = $request->first_name;
-        $other_names    = $request->other_names;
+        $fullname     = $request->fullname;
+        $username    = $request->username;
         $phone_number   = $request->phone_number;
         $email          = $request->email;
         $state_id       = $request->state;
         $area_id        = $request->area;
-        $street_address = $request->street_address;
+        $account_type = $request->account_type;
         $verify_email   = $request->verify_email;
         $password        = $request->password;
         
         
         $agent = new User();
-        $agent->first_name = $first_name;
-        $agent->other_names = $other_names;
+        $agent->fullname = $fullname;
+        $agent->username = $username;
         $agent->phone_number = $phone_number;
         $agent->email  = $email;
         $agent->email_verified_at  = now();
@@ -91,7 +91,7 @@ class AgentController extends Controller
             $agent->addresses()->create([
                 'state_id'       => $state_id,
                 'area_id'        => $area_id,
-                'street_address' => $street_address
+                'account_type' => $account_type
             ]);
             
             // upload cv and save agent details
@@ -105,7 +105,7 @@ class AgentController extends Controller
                 $agent->addresses()->create([
                     'state_id'       => $state_id,
                     'area_id'        => $area_id,
-                    'street_address' => $street_address
+                    'account_type' => $account_type
                 ]);
             }
 
@@ -198,13 +198,13 @@ class AgentController extends Controller
     public function update_agent(Request $request, $id)
     {
         // $validatedData = $request->validate([
-        //     'first_name'     => ['required', 'max:255'],
-        //     'other_names'    => ['required', 'max:255'],
+        //     'fullname'     => ['required', 'max:255'],
+        //     'username'    => ['required', 'max:255'],
         //     'phone_number'   => ['required', 'max:255'],
         //     'email'          => ['required', 'max:255'],
         //     'state'          => ['required'],
         //     'area'           => ['required'],
-        //     'street_address' => ['required'],
+        //     'account_type' => ['required'],
         //     'verify_email'   => ['required'],
         //     'image'          => ['required'],
         //     // 'cv'             => ['required'],
@@ -215,18 +215,18 @@ class AgentController extends Controller
 
         if($agent) {
 
-            $first_name     = $request->first_name;
-            $other_names    = $request->other_names;
+            $fullname     = $request->fullname;
+            $username    = $request->username;
             $phone_number   = $request->phone_number;
             $email          = $request->email;
             $state_id       = $request->state;
             $area_id        = $request->area;
-            $street_address = $request->street_address;
+            $account_type = $request->account_type;
             $verify_email   = $request->verify_email;
             $password       = $request->password;
             
-            $agent->first_name        = $first_name;
-            $agent->other_names       = $other_names;
+            $agent->fullname        = $fullname;
+            $agent->username       = $username;
             $agent->phone_number      = $phone_number;
             $agent->email             = $email;
             
@@ -251,7 +251,7 @@ class AgentController extends Controller
 
                     $agent_address->state_id       = $state_id;
                     $agent_address->area_id        = $area_id;
-                    $agent_address->street_address = $street_address;
+                    $agent_address->account_type = $account_type;
                     $agent_address->save();
 
                 } else { //if for some reason the agent dont have address create one with the edit data
@@ -259,7 +259,7 @@ class AgentController extends Controller
                     $agent->addresses()->create([
                         'state_id'       => $state_id,
                         'area_id'        => $area_id,
-                        'street_address' => $street_address
+                        'account_type' => $account_type
                     ]);
 
                 }

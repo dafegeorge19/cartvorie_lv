@@ -43,8 +43,8 @@
                                                     @foreach($agents as $agent)
                                                         @if($agent->agent_detail->status == 'enabled')
                                                             <tr>
-                                                                <td class="woocommerce-table__product-total product-total text-capitalize">{{$agent->first_name}}</td>
-                                                                <td class="woocommerce-table__product-total product-total text-capitalize">{{$agent->other_names}}</td>
+                                                                <td class="woocommerce-table__product-total product-total text-capitalize">{{$agent->fullname}}</td>
+                                                                <td class="woocommerce-table__product-total product-total text-capitalize">{{$agent->username}}</td>
                                                                 <td class="woocommerce-table__product-total product-total text-capitalize">{{$agent->addresses->first()->area->name}}</td>
                                                                 <td class="woocommerce-table__product-total product-total text-capitalize">{{$agent->addresses->first()->state->name}}</td>
                                                             </tr>

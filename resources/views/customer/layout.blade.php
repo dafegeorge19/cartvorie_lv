@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-        <title>Skipoutlet - Online Stores</title>
+        <title>Cartvorie - Online Stores</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/bootstrap.min.css') }}" media="all" />
         <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/font-awesome.min.css') }}" media="all" />
         <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/bootstrap-grid.min.css') }}" media="all" />

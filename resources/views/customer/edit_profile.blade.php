@@ -28,23 +28,23 @@
                                         <h3>Edit Profile</h3>
                                         <div class="woocommerce-billing-fields__field-wrapper-outer">
                                             <div class="woocommerce-billing-fields__field-wrapper">
-                                                <p id="first_name" class="form-row form-row-last validate-required">
-                                                    <label class="" for="first_name">First Name
+                                                <p id="fullname" class="form-row form-row-last validate-required">
+                                                    <label class="" for="fullname">First Name
                                                         <abbr title="required" class="required">*</abbr>
                                                     </label>
-                                                    <input type="text" value="{{ auth::user()->first_name ?? '' }}" placeholder="First Name" id="first_name" name="first_name" class="input-text text-capitalize">
-                                                    @error('first_name')
+                                                    <input type="text" value="{{ auth::user()->fullname ?? '' }}" placeholder="First Name" id="fullname" name="fullname" class="input-text text-capitalize">
+                                                    @error('fullname')
                                                         <small class="text-danger" role="alert">
                                                             <strong id="billing_fn_error">{{ $message }}</strong>
                                                         </small>
                                                     @enderror 
                                                 </p>
-                                                <p id="other_names" class="form-row form-row-last validate-required">
-                                                    <label class="" for="other_names">Other Names
+                                                <p id="username" class="form-row form-row-last validate-required">
+                                                    <label class="" for="username">Other Names
                                                         <abbr title="required" class="required">*</abbr>
                                                     </label>
-                                                    <input type="text" value="{{ auth::user()->other_names ?? '' }}" placeholder="Other Names" id="other_names" name="other_names" class="input-text text-capitalize">
-                                                    @error('other_names')
+                                                    <input type="text" value="{{ auth::user()->username ?? '' }}" placeholder="Other Names" id="username" name="username" class="input-text text-capitalize">
+                                                    @error('username')
                                                         <small class="text-danger" role="alert">
                                                             <strong id="billing_fn_error">{{ $message }}</strong>
                                                         </small>
@@ -95,8 +95,8 @@
                                                     <label class="" for="billing_address_1">Street address
                                                         <abbr title="required" class="required">*</abbr>
                                                     </label>
-                                                    <input type="text" value="{{ auth::user() ? auth::user()->addresses->first()->street_address : '' }}" placeholder="Street address" id="billing_street_address" name="street_address" class="input-text text-capitalize">
-                                                    @error('street_address')
+                                                    <input type="text" value="{{ auth::user() ? auth::user()->addresses->first()->account_type : '' }}" placeholder="Street address" id="billing_account_type" name="account_type" class="input-text text-capitalize">
+                                                    @error('account_type')
                                                         <small class="text-danger" role="alert">
                                                             <strong id="billing_fn_error">{{ $message }}</strong>
                                                         </small>

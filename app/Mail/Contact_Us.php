@@ -30,7 +30,7 @@ class Contact_Us extends Mailable
      */
     public function build()
     {
-        return $this->from('contact_us@skipoutlet.com')
+        return $this->from('contact_us@cartvorie.com')
                 ->view('email.contact', [
                     'request' => $this->request
                 ]);

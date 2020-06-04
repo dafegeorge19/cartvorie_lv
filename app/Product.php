@@ -34,10 +34,10 @@ class Product extends Model
     {
         $state = $this->supermarket->state->name;
         $area = $this->supermarket->area->name;
-        $street_address = $this->supermarket->street_address;
+        $account_type = $this->supermarket->account_type;
 
         return [
-            'street_address' => $street_address,
+            'account_type' => $account_type,
             'area' => $area,
             'state' => $state
         ];

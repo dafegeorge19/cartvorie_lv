@@ -55,7 +55,7 @@ class SupermarketController extends Controller
             'name'           => ['required', 'max:255'],
             'state'          => ['required'],
             'area'           => ['required'],
-            'street_address' => ['required'],
+            'account_type' => ['required'],
             'description' => 'required',
             // 'logo'           => ['required'],
         ]);
@@ -63,7 +63,7 @@ class SupermarketController extends Controller
         $name           = $request->name;
         $state_id       = $request->state;
         $area_id        = $request->area;
-        $street_address = $request->street_address;
+        $account_type = $request->account_type;
         $description    = $request->description;
         
         // generate slug
@@ -86,7 +86,7 @@ class SupermarketController extends Controller
         $supermarket->slug           = $new_slug;
         $supermarket->state_id       = $state_id;
         $supermarket->area_id        = $area_id;
-        $supermarket->street_address = $street_address;
+        $supermarket->account_type = $account_type;
         $supermarket->description    = $description;
         
         if($supermarket->save()) {
@@ -173,7 +173,7 @@ class SupermarketController extends Controller
             'name'           => ['required', 'max:255'],
             'state'          => ['required'],
             'area'           => ['required'],
-            'street_address' => ['required'],
+            'account_type' => ['required'],
             'description' => 'required',
             // 'logo'           => ['required'],
         ]);
@@ -185,13 +185,13 @@ class SupermarketController extends Controller
             $name           = $request->name;
             $state_id       = $request->state;
             $area_id        = $request->area;
-            $street_address = $request->street_address;
+            $account_type = $request->account_type;
             $description    = $request->description;
 
             $supermarket->name           = $name;
             $supermarket->state_id       = $state_id;
             $supermarket->area_id        = $area_id;
-            $supermarket->street_address = $street_address;
+            $supermarket->account_type = $account_type;
             $supermarket->description    = $description;
 
             if($supermarket->save()) {

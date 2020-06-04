@@ -15,7 +15,7 @@ class Supermarket extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'state_id', 'area_id', 'street_address'
+        'name', 'state_id', 'area_id', 'account_type'
     ];
 
     

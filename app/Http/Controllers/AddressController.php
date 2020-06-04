@@ -13,14 +13,14 @@ class AddressController extends Controller
 
         $state_id       = $request->state;
         $area_id        = $request->area;
-        $street_address = $request->street_address;
+        $account_type = $request->account_type;
         $user_id        = Auth::user()->id;
 
         $address                 = new Address();
         $address->state_id       = $state_id;
         $address->area_id        = $area_id;
         $address->user_id        = $user_id;
-        $address->street_address = $street_address;
+        $address->account_type = $account_type;
 
         if($address->save()) {
 
