@@ -354,7 +354,7 @@
                         <div class="row">
                             <div class="site-branding">
                                 <a href="{{ url('/') }}" class="custom-logo-link" rel="home">
-                                    <img width="100px" src="{{ asset('customer\images\logo.png') }}" alt="">
+                                  <img src="{{url('asset/img/logo.jpeg')}}" width="100" alt="">
                                 </a>
                                 <!-- /.custom-logo-link -->
                             </div>

@@ -2793,7 +2793,8 @@ textarea,
   box-sizing: border-box;
   font-weight: normal;
   font-size: 1em;
-  border: 1px solid #ebebeb; }
+  border: 1px solid #cc00ff;
+  }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -3305,7 +3306,8 @@ table {
  */
 body {
   -ms-word-wrap: break-word;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  }
 
 body,
 button,
@@ -3332,6 +3334,21 @@ article .more-link:hover,
 select {
   color: initial;
   font-family: "Rubik", "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+select.form-control {
+    padding: 9px;
+    background-color: #fff;
+    color: #444;
+    outline: none;
+    border: 0;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 1em;
+    border: 1px solid #cc00ff;
+    height: auto !important;
+}
 
 h1,
 h2,
@@ -4364,7 +4381,8 @@ body.can-uppercase .section-categories-carousel.section-top-categories .readmore
   width: 100%;
   min-height: 1px;
   padding-right: 15px;
-  padding-left: 15px; }
+  padding-left: 15px;
+  }
   @media (min-width: 576px) {
     .site-header .navbar-search,
     .site-header .primary-navigation {
@@ -4410,7 +4428,8 @@ body.can-uppercase .section-categories-carousel.section-top-categories .readmore
 @media (min-width: 1200px) and (max-width: 1399px) {
   .site-header .primary-navigation {
     flex: 0 0 54.1666666667%;
-    max-width: 54.1666666667%; } }
+    max-width: 54.1666666667%;
+    } }
 
 .site-header .secondary-navigation {
   position: relative;
@@ -4454,7 +4473,8 @@ body.can-uppercase .section-categories-carousel.section-top-categories .readmore
 @media (min-width: 1200px) and (max-width: 1699px) {
   .site-header.header-v1 .primary-navigation {
     flex: 0 0 75%;
-    max-width: 75%; } }
+    max-width: 75%;
+    } }
 
 @media (min-width: 1700px) and (max-width: 1800px) {
   .site-header.header-v1 .primary-navigation {
@@ -9536,7 +9556,8 @@ a#variations_clear:before {
 .navbar-primary .nav {
   margin-left: 0;
   flex-wrap: wrap;
-  display: block; }
+  display: block;
+  }
   .primary-navigation .nav > li,
   .navbar-primary .nav > li {
     line-height: 1.933em;
@@ -10620,7 +10641,8 @@ a#variations_clear:before {
 
 .primary-navigation,
 .navbar-primary {
-  position: static !important; }
+  position: static !important;
+  }
   .primary-navigation .yamm-fw .dropdown-menu,
   .navbar-primary .yamm-fw .dropdown-menu {
     width: 100%; }

@@ -3,7 +3,7 @@
 @section('title', 'Register')
 
 @section('content')
-<section class="py-12 pt-5">
+<section class="py-12 pt-5 pb-5">
             <div class="container">
               <div class="row">
                 <div class="col-12 col-md-6">
@@ -13,7 +13,7 @@
                     <div class="card-body">
 
                       <!-- Heading -->
-                      <h6 class="mb-7">Returning Customer</h6>
+                      <h6 class="mb-5">Returning Customer</h6>
 
                       <!-- Form -->
                       <form>
@@ -83,33 +83,38 @@
                     <div class="card-body">
 
                       <!-- Heading -->
-                      <h6 class="mb-7">New Customer</h6>
+                      <h6 class="mb-5">New Customer</h6>
 
                       <!-- Form -->
                       <form>
-                        <div class="row">
+                        <div class="row justify-content-center">
+                          <div class="col-6">
+
+                            <!-- Email -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerFirstName">
+                                Account type
+                              </label>
+                              <select class="form-control form-control-sm" id="registerAcctype" name='acc_type' type="text" placeholder="First Name *" required="">
+                                <option value="">Account Type</option>
+                                <option value="buyer">Buyer</option>
+                                <option value="driver">Driver</option>
+                              </select>
+                            </div>
+
+                          </div>
                           <div class="col-12">
 
                             <!-- Email -->
                             <div class="form-group">
                               <label class="sr-only" for="registerFirstName">
-                                First Name *
+                                Full Name *
                               </label>
                               <input class="form-control form-control-sm" id="registerFirstName" type="text" placeholder="First Name *" required="">
                             </div>
 
                           </div>
-                          <div class="col-12">
 
-                            <!-- Email -->
-                            <div class="form-group">
-                              <label class="sr-only" for="registerLastName">
-                                Last Name *
-                              </label>
-                              <input class="form-control form-control-sm" id="registerLastName" type="text" placeholder="Last Name *" required="">
-                            </div>
-
-                          </div>
                           <div class="col-12">
 
                             <!-- Email -->
@@ -118,6 +123,28 @@
                                 Email Address *
                               </label>
                               <input class="form-control form-control-sm" id="registerEmail" type="email" placeholder="Email Address *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12">
+
+                            <!-- Username -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerUsername">
+                                Username *
+                              </label>
+                              <input class="form-control form-control-sm" id="registerUsername" type="text" placeholder="Username *" required="">
+                            </div>
+
+                          </div>
+                          <div class="col-12">
+
+                            <!-- Username -->
+                            <div class="form-group">
+                              <label class="sr-only" for="registerPhone">
+                                Phone Number *
+                              </label>
+                              <input class="form-control form-control-sm" id="registerPhone" type="text" placeholder="Phone Number *" required>
                             </div>
 
                           </div>
@@ -148,6 +175,7 @@
                             <!-- Link -->
                             <div class="form-group font-size-sm text-muted">
                               By registering your details, you agree with our Terms &amp; Conditions,
+                              <br>
                               and Privacy and Cookie Policy.
                             </div>
 

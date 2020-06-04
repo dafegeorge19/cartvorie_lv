@@ -128,7 +128,7 @@ table.cart td.actions div.coupon .button:hover,
 .wcmp_main_page .wcmp_main_holder .wcmp_headding1 button:hover,
 .btn-primary:hover,
 .navbar-search button:hover {
-  background-color: #fceeff;
+  background-color: #652f91;
   }
 
 .home-v3-banner-with-products-carousel .banner .banner-action.button:hover {
@@ -143,7 +143,8 @@ table.cart td.actions div.coupon .button:hover,
 .woocommerce-wishlist table.cart .product-add-to-cart a.button:hover,
 table.cart td.actions div.coupon .button:hover,
 .btn-primary:hover {
-  border-color: #f9cc00; }
+  border-color: #652f91;
+  }
 
 .home-v3-banner-with-products-carousel .banner .banner-action.button:hover {
   border-color: #dab300; }
