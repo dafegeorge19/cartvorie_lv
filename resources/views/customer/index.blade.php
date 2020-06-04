@@ -45,53 +45,7 @@
 
                                 </div> -->
 <style media="screen">
-.home-slider .slider-home-banner img {
-  height: 367px;
-}
-.slider-caption {
-  color: #fff;
-  position: absolute;
-  padding: 30px;
-  padding-top: 57px;
-  left: 10%;
-  bottom: 30%;
-  z-index: 10;
-}
-.home-slider .carousel-item img {
-    width: 100%;
-    object-fit: cover;
-    overflow: hidden;
-}
-.dv img {
-  padding: 0px;
-}
-.mobile-card {/* height: 350px; */text-align: center;background-color: #fceeff;}
-.mobile-img {margin-top: -40px;display: inline-block;}
-.mobile-img img {border-radius: 20px;}
-.mobile-text {text-align: left;margin: auto;}
-.product-box {display: inline-flex;display: -moz-box;display: -o-box;display: box;flex-wrap: wrap;justify-content: center;}
-.product-1 {
-  -webkit-flex-box: 1;
-  -moz-flex-box: 1;
-  -o-flex-box: 1;
-  flex-box: 1;
-  width: 203px;
-  color: #fff;
-  height: 90px;
-  border-radius: 20px;
-  background-image: linear-gradient(to right, #7d07e4, #cb00fe 100px);
-}
-.p-image img {border-radius: 10px;}
-.desc-1 {
-    display: inline-grid;
-    font-size: small;
-    bottom: 0px;
-    position: absolute;
-    height: 70px;
-    left: 15px;
-    top: 0;
-    margin-top: 10px;
-}
+
 </style>
 
                             <div class="home-v1-slider home-slider set-h set-m" style="height: 100%">
@@ -107,7 +61,7 @@
                                     <div class="carousel-item active slider-img">
                                       <img src="asset/img/g2.jpg" alt="First slide">
                                       <div class=" slider-caption">
-                                        <h2 class="">Farm Fresh <br>Vegetables</h2>
+                                        <h2 class="text-white">Farm Fresh <br>Vegetables</h2>
                                         <br>
                                         <a class="btn btn-primary border text-white btn-lg" href="#" role="button">Shop Now</a>
                                       </div>
@@ -116,7 +70,7 @@
                                     <div class="carousel-item slider-img">
                                       <img src="asset/img/11.jpg" alt="Second slide">
                                       <div class=" slider-caption">
-                                        <h2 class="">Vegetables</h2>
+                                        <h2 class="text-white">Vegetables</h2>
                                         <br>
                                         <a class="btn btn-primary border text-white btn-lg" href="#" role="button">Shop Now</a>
                                       </div>
@@ -125,7 +79,7 @@
                                     <div class="carousel-item slider-img">
                                       <img src="asset/img/22.jpg" alt="Third slide">
                                       <div class=" slider-caption">
-                                        <h2 class="">Shop the Best</h2>
+                                        <h2 class="text-white">Shop the Best</h2>
                                         <br>
                                         <a class="btn btn-primary border text-white btn-lg" href="#" role="button">Shop Now</a>
                                       </div>
