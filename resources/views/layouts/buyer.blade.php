@@ -54,25 +54,25 @@
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="dashboard.html">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/')}}">
               <p>Dashboard</p>
             </a>
           </li>
 
           <li class="nav-item ">
-            <a class="nav-link" href="profile">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/profile')}}">
 
               <p>Profile</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="purchase_history">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/purchase_history')}}">
 
               <p>Purchase History</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="start_shopping">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/start_shopping')}}">
 
               <p>Start Shopping</p>
             </a>
@@ -84,43 +84,43 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="riders.html">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/riders.html')}}">
 
               <p>Pickup and Delivery</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="stores.html">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/stores.html')}}">
 
               <p>Points</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="wallet.html">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/wallet.html')}}">
 
               <p>Contact Admin</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="routing.html">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/routing.html')}}">
 
               <p>Favourite</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="delivery_status">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/delivery_status')}}">
 
               <p>Delivery Status</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="newsletter.html">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/newsletter.html')}}">
 
               <p>FAQ</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="settings.html">
+            <a class="nav-link" href="{{url(Auth::user()->role.'/settings.html')}}">
 
               <p>Settings</p>
             </a>

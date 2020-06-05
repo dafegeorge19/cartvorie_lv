@@ -32,9 +32,6 @@ class ProfileController extends Controller
         $request->validate([
             'fullname' => 'required',
             'username' => 'required',
-            'state' => 'required|exists:states,id',
-            'area' => 'required|exists:areas,id',
-            'account_type' => 'required',
             'phone_number' => 'required|numeric',
             'password' => 'nullable|min:6|confirmed'
         ]);
@@ -49,15 +46,7 @@ class ProfileController extends Controller
         }
         $user->save();
 
-        // update address 
-        $address = $user->addresses->first();
-        if($address){
-            $address->state_id = $request->state;
-            $address->area_id = $request->area;
-            $address->account_type = $request->account_type;
-            $address->save();
-        }
-
+        
         return redirect()->back()->with([
             'message' => 'Your profile has been updated successfully'
         ]);

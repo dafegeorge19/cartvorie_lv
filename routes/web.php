@@ -90,7 +90,7 @@ Route::view('test', 'test');
 
 Route::prefix('buyer')->group(function () {
   Route::view('/', 'buyer.index');
-  Route::get('/edit_profile', 'ProfileController@edit')->middleware('auth');
+  Route::get('/profile', 'ProfileController@edit')->middleware('auth');
   Route::post('/update_profile', 'ProfileController@update')->middleware('auth');
 
 });

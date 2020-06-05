@@ -1,18 +1,18 @@
-@extends('layouts.customer')
-@section('body-class', 'woocommerce-active page-template-default woocommerce-checkout woocommerce-page can-uppercase')
-
-
+@extends('layouts.buyer')
 
 @section('content')
-<br>
-<br>
+<div class="content">
+  <div class="container-fluid">
+    <h4 style="margin-left: 30px;"><b>EDIT PROFILE</b></h4>
 
-    <div id="content" class="site-content">
-        <div class="col-full">
-            <div class="row">
                 <!-- .woocommerce-breadcrumb -->
                 <div class="content-area" id="primary">
                     <main class="site-main" id="main">
+                      <div class="row justify-content-center">
+
+
+                      <div class="col-6">
+
 
                         @if(session()->has('message')) {{-- if there is a message in session --}}
                             <div class="alert alert-success" role="alert">
@@ -21,125 +21,104 @@
                         @endif
 
                         <form action="{{ url('/update_profile') }}" class="" method="post" name="checkout">
-                            @csrf
-                            <div id="customer_details" class="">
-                                <div class="">
-                                    <div class="woocommerce-billing-fields">
-                                        <h3>Edit Profile</h3>
-                                        <div class="woocommerce-billing-fields__field-wrapper-outer">
-                                            <div class="woocommerce-billing-fields__field-wrapper">
-                                                <p id="fullname" class="form-row form-row-last validate-required">
-                                                    <label class="" for="fullname">First Name
-                                                        <abbr title="required" class="required">*</abbr>
-                                                    </label>
-                                                    <input type="text" value="{{ auth::user()->fullname ?? '' }}" placeholder="First Name" id="fullname" name="fullname" class="input-text text-capitalize">
-                                                    @error('fullname')
-                                                        <small class="text-danger" role="alert">
-                                                            <strong id="billing_fn_error">{{ $message }}</strong>
-                                                        </small>
-                                                    @enderror 
-                                                </p>
-                                                <p id="username" class="form-row form-row-last validate-required">
-                                                    <label class="" for="username">Other Names
-                                                        <abbr title="required" class="required">*</abbr>
-                                                    </label>
-                                                    <input type="text" value="{{ auth::user()->username ?? '' }}" placeholder="Other Names" id="username" name="username" class="input-text text-capitalize">
-                                                    @error('username')
-                                                        <small class="text-danger" role="alert">
-                                                            <strong id="billing_fn_error">{{ $message }}</strong>
-                                                        </small>
-                                                    @enderror 
-                                                </p>
-                                                <p id="state" class="form-row form-row-last validate-required">
-                                                    <label class="" for="state">State
-                                                        <abbr title="required" class="required">*</abbr>
-                                                    </label>
-                                                    <select autocomplete="country" class="country_to_state country_select select2-hidden-accessible text-capitalize state_set" id="state" data-output_area="billing_area" name="state" tabindex="-1" aria-hidden="true">
-                                                        <option value="">Select State</option>
-                                                        @foreach($states as $state)
-                                                            @if($state->id == auth::user()->addresses->first()->state_id)
-                                                                <option value="{{$state->id}}" selected>{{$state->name}}</option>
-                                                                @break
-                                                            @endif
-                                                            <option value="{{$state->id}}">{{$state->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('state')
-                                                        <small class="text-danger" role="alert">
-                                                            <strong id="billing_fn_error">{{ $message }}</strong>
-                                                        </small>
-                                                    @enderror 
-                                                </p>
+                            <div class="row justify-content-center">
+                              <div class="col-6">
+                                @csrf
+                                <!-- Email -->
+                              <img src="{{asset('/asset/assets/img/select.png')}}" alt="">
 
-                                                <p id="billing_country_field" class="form-row form-row-last validate-required">
-                                                    <label class="" for="billing_country">Area
-                                                        <abbr title="required" class="required">*</abbr>
-                                                    </label>
-                                                    <select autocomplete="country" class="country_to_state country_select select2-hidden-accessible text-capitalize" id="billing_area" name="area" tabindex="-1" aria-hidden="true">
-                                                        <option value="" selected>Select Area</option>
-                                                        @foreach ($areas->where('state_id', auth::user()->addresses->first()->state_id) as $area)
-                                                            @if($area->id == auth::user()->addresses->first()->area_id)
-                                                                <option value="{{$area->id}}" selected>{{$area->name}}</option>
-                                                                @break
-                                                            @endif
-                                                            <option value="{{$area->id}}" selected>{{$area->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('area')
-                                                        <small class="text-danger" role="alert">
-                                                            <strong id="billing_fn_error">{{ $message }}</strong>
-                                                        </small>
-                                                    @enderror 
-                                                </p>
-                                                <p id="billing_address_1_field" class="form-row form-row-last validate-required">
-                                                    <label class="" for="billing_address_1">Street address
-                                                        <abbr title="required" class="required">*</abbr>
-                                                    </label>
-                                                    <input type="text" value="{{ auth::user() ? auth::user()->addresses->first()->account_type : '' }}" placeholder="Street address" id="billing_account_type" name="account_type" class="input-text text-capitalize">
-                                                    @error('account_type')
-                                                        <small class="text-danger" role="alert">
-                                                            <strong id="billing_fn_error">{{ $message }}</strong>
-                                                        </small>
-                                                    @enderror 
-                                                </p>
-                                                
-                                                <p id="billing_phone_field" class="form-row form-row-last validate-required">
-                                                    <label class="" for="billing_phone">Phone Number
-                                                        <abbr title="required" class="required">*</abbr>
-                                                    </label>
-                                                    <input type="tel" value="{{ auth::user()->phone_number ?? '' }}" placeholder="Phone Number" id="billing_phone_number" name="phone_number" class="input-text ">
-                                                    @error('phone_number')
-                                                        <small class="text-danger" role="alert">
-                                                            <strong id="billing_fn_error">{{ $message }}</strong>
-                                                        </small>
-                                                    @enderror 
-                                                </p>
+                              </div>
+                              <div class="col-12">
 
-                                                <p id="billing_phone_field" class="form-row form-row-last validate-required">
-                                                    <label class="" for="password">New Password
-                                                    </label>
-                                                    <input type="password" value="" id="password" name="password" class="input-text ">
-                                                    @error('password')
-                                                        <small class="text-danger" role="alert">
-                                                            <strong id="billing_fn_error">{{ $message }}</strong>
-                                                        </small>
-                                                    @enderror 
-                                                </p>
-                                                <p id="billing_email_field" class="form-row form-row-last validate-required">
-                                                    <label class="" for="billing_email">Confirm New Password
-                                                    </label>
-                                                    <input type="password" value="" id="password-confirmation" name="password_confirmation" class="input-text ">
-                                                </p>
-                                            </div>
-                                            <button type="submit">Submit</button>
-                                        </div>
-                                        <!-- .woocommerce-billing-fields__field-wrapper-outer -->
-                                    </div>
-                                    <!-- .woocommerce-billing-fields -->
+                                <!-- Email -->
+                                <div class="form-group">
+                                  <label class="sr-only" for="registerFirstName">
+                                    Full Name *
+                                  </label>
+                                  <input class="form-control form-control-sm" id="registerFirstName" value="{{request()->user()->fullname ?? ''}}" name="fullname" type="text" placeholder="First Name *" required="">
                                 </div>
+
+                              </div>
+
+                              <div class="col-12">
+
+                                <!-- Email -->
+                                <div class="form-group">
+                                  <label class="sr-only" for="registerEmail">
+                                    Email Address *
+                                  </label>
+                                  <span class="form-control form-control-sm @error('password') is-invalid @enderror" id="registerEmail" name="email" value="{{request()->user()->email ?? ''}}" type="email" placeholder="Email Address *" required="">
+                                    {{request()->user()->email ?? ''}}
+                                  </span>
+                                </div>
+
+                              </div>
+                              <div class="col-12">
+
+                                <!-- Username -->
+                                <div class="form-group">
+                                  <label class="sr-only" for="registerUsername">
+                                    Username *
+                                  </label>
+                                  <input class="form-control form-control-sm" id="registerUsername" type="text" value="{{request()->user()->username ?? ''}}" name="username" placeholder="Username *" required="">
+                                </div>
+
+                              </div>
+                              <div class="col-12">
+
+                                <!-- Username -->
+                                <div class="form-group">
+                                  <label class="sr-only" for="registerPhone">
+                                    Phone Number *
+                                  </label>
+                                  <input class="form-control form-control-sm @error('password') is-invalid @enderror" id="registerPhone" type="text" value="{{request()->user()->phone_number ?? ''}}" name="phone_number" placeholder="Phone Number *" required>
+                                </div>
+                                @error('phone_number')
+                                    <p class="text-danger pt-0" role="alert" style="padding: 0px">
+                                        <small>{{ $message }}</small>
+                                    </p>
+                                @enderror
+
+                              </div>
+                              <div class="col-12 col-md-6">
+
+                                <!-- Password -->
+                                <div class="form-group">
+                                  <label class="sr-only" for="registerPassword">
+                                    Password *
+                                  </label>
+                                  <input class="form-control form-control-sm @error('password') is-invalid @enderror" name="password" id="registerPassword" type="password" placeholder="Password *" required="">
+                                </div>
+                                @error('password')
+                                    <p class="text-danger pt-0" role="alert" style="padding: 0px">
+                                        <small>{{ $message }}</small>
+                                    </p>
+                                @enderror
+                              </div>
+                              <div class="col-12 col-md-6">
+
+                                <!-- Password -->
+                                <div class="form-group">
+                                  <label class="sr-only" for="registerPasswordConfirm">
+                                    Confirm Password *
+                                  </label>
+                                  <input class="form-control form-control-sm" id="registerPasswordConfirm" name="password_confirmation" type="password" placeholder="Confrm Password *" required="">
+                                </div>
+
+                              </div>
+                              
+                              <div class="col-12">
+
+                                <!-- Button -->
+                                <button class="btn btn-sm btn-primary" type="submit">
+                                Update Profile
+                                </button>
+
+                              </div>
                             </div>
                         </form>
-
+                      </div>
+                      </div>
                     </main>
                     <!-- #main -->
                 </div>
@@ -148,8 +127,6 @@
             <!-- .row -->
         </div>
         <!-- .col-full -->
-    </div>
-
 
 @endsection
 
@@ -177,12 +154,12 @@
             let state_id = $(this).val();
             let output = $(this).data('output_area');
             console.log(output)
-          
+
           $('#' + output).attr('disabled', 'disabled')
           $('#' + output).empty()
           $('#' + output).append(`<option value="" class="text-capitalize">Select Area</option>`)
 
-          
+
 
           $.ajax({
             type: 'POST',
@@ -193,7 +170,7 @@
             success: function (areas) {
 
               console.log(areas)
-              
+
 
               if(Object.keys(areas).length > 0 ) {
 
@@ -203,7 +180,7 @@
 
                     let area_id = areas[key]['id']
                     let area_name = areas[key]['name']
-                    
+
                     $('#' + output).append(`<option value="` + area_id + `" class="text-capitalize">` + area_name + `</option>`)
                   }
                 }

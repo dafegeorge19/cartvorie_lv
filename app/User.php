@@ -53,18 +53,18 @@ class User extends Authenticatable
     /**
      * Get the addresses for the user.
      */
-    public function addresses()
+    public function profile()
     {
-        return $this->hasMany('App\Address');
+        return $this->hasOne('App\Profile');
     }
 
     /**
      * Get the agent detail associated with the user.
      */
-    public function agent_detail()
-    {
-        return $this->hasOne('App\AgentDetail');
-    }
+    // public function agent_detail()
+    // {
+    //     return $this->hasOne('App\AgentDetail');
+    // }
 
     /**
      * Get all of the user's images.
