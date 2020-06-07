@@ -77,12 +77,13 @@
     <div class="container">
 
     <div class="row justify-content-center">
-      <div class="col-lg-5 col-md-4">
+      <div class="col-lg-5 col-md-4 text-center">
         <h4><b>TRACK YOUR DELIVERY</b></h4>
         <div class="input-group no-border" style="border: 1px solid #DF61FF; border-radius: 5px; padding: 2px; ">
 
         <input type="text" class="form-control" name="delivery_id" placeholder="Enter delivery ID to track delivery" value="">
       </div>
+      <button type="submit" class="btn btn-primary" name="button">Start</button>
       </div>
     </div>
   </div>

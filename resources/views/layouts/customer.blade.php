@@ -42,6 +42,13 @@
                         <li class="menu-item animate-dropdown">
                             <a title="No additional fees" href="javascript:viod(0)"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a>
                         </li>
+                        <li class="menu-item ml-4 animate-dropdown">
+                        <select class="" name="" style="height:30px">
+                          <option value="">Language</option>
+                          <option value="">English</option>
+                          <option value="">French</option>
+                        </select>
+                        </li>
                     </ul>
                     <!-- .nav -->
                 </div>
@@ -83,7 +90,7 @@
                                   <a title="New Arrivals" href="{{ url('/store', [$supermarket->slug]) }}">{{$supermarket->name}}</a>
                                 </li>
                                 @endforeach
-
+                                <li>here</li>
                             </ul>
                         </div>
                         <!-- .departments-menu -->
@@ -94,7 +101,7 @@
                             <div class="input-group">
                                 <input type="text" id="search" class="form-control search-field product-search-field" dir="ltr" value="" name="product_name" required placeholder="Search for products" />
                                 <div class="input-group-addon search-categories popover-header">
-                                    <select name='store_id' id='product_cat' class='postform resizeselect' style="color: white">
+                                    <select name='store_id' id='product_cat' class='postform resizeselect' style="color: #652f91">
                                         <option value='' selected='selected' style="color: black">All Stores</option>
                                       @foreach($supermarkets as $supermarket)
                                             <option class="level-0 text-capitalize" value="{{$supermarket->id}}" style="color: black">{{$supermarket->name}}</option>
@@ -135,7 +142,7 @@
                                                 <p id="tots" style="display: none" class="woocommerce-mini-cart__total total">
                                                     <strong>Subtotal:</strong>
                                                     <span class="woocommerce-Price-amount amount">
-                                                        <span class="woocommerce-Price-currencySymbol">₦</span>
+                                                        <span class="woocommerce-Price-currencySymbol">$</span>
                                                         <span id="products_subtotal"></span>
                                                     </span>
                                                 </p>
@@ -239,7 +246,7 @@
 
                 <div class="col-full desktop-only" style="background-color: #662e91; width: 100%">
 
-                        <div class="row" style="background-color: #662e91;">
+                        <div class="row justify-content-center" style="background-color: #662e91;">
 
 
 
@@ -249,7 +256,11 @@
                             <nav id="primary-navigation" class="primary-navigation" aria-label="Primary Navigation" data-nav="flex-menu">
                                 <ul id="menu-primary-menu" class="nav yamm">
                                     <li class="menu-item animate-dropdown">
-                                        <a  href="#" >Groceries Delivery</a>
+                                        <a  href="{{url('/pickup_and_delivery')}}" >Pick up and delivery</a>
+
+                                    </li>
+                                    <li class="menu-item animate-dropdown">
+                                        <a  href="{{url('groceries_and_delivery')}}" >Groceries delivery</a>
 
                                     </li>
                                     <li class="menu-item menu-item-has-children animate-dropdown dropdown">
@@ -280,30 +291,24 @@
                                             <li class="menu-item animate-dropdown">
                                                 <a title="All Categories" href="{{ url('/categories') }}">All Categories</a>
                                             </li>
-                                            {{-- @foreach($categories as $category)
+                                            @foreach($categories as $category)
                                                 <li class="menu-item animate-dropdown">
                                                     <a title="{{ $category->name }}" href="{{url('/stores') . '?' . http_build_query(['category_name' => $category->name])}}">{{ $category->name }}</a>
                                                 </li>
-                                            @endforeach --}}
+                                            @endforeach
                                         </ul>
                                         <!-- .dropdown-menu -->
                                     </li>
-                                    <li class="menu-item animate-dropdown">
-                                        <a href="{{ url('/products') }}" >All Products</a>
-                                    </li>
-                                    <li class="menu-item animate-dropdown">
-                                      <a class="nav-link" href="{{ url('/contact_us') }}">Inquiry</a>
 
-                                    </li>
                                     <li class="menu-item animate-dropdown">
                                         <a href="{{ url('/deliver.html') }}" >Track Your Delivery</a>
                                     </li>
                                     @guest
                                         <li class="menu-item animate-dropdown" style="    text-align: center;">
 
-                                            <a class="" href="{{ url('/register') }}" > <i class="tm tm-login-register"></i> Register</a>
-                                            <span>OR</span>
-                                            <a class="" href="{{ url('/login') }}" ><i class="tm tm-login-register"></i> Login</a>
+                                            <li class="menu-item "><a href="{{ url('/register') }}" > <i class="tm tm-login-register"></i> Register</a></li>
+
+                                            <li class="menu-item "><a href="{{ url('/login') }}" ><i class="tm tm-login-login"></i> Login</a></li>
                                         </li>
                                     @endguest
                                     <li class="techmarket-flex-more-menu-item dropdown animate-dropdown">
@@ -397,17 +402,72 @@
                                         <span>Menu</span>
                                     </button>
                                     <div class="handheld-navigation-menu">
-                                        <span class="tmhm-close">Top Stores</span>
+                                        <span class="tmhm-close">Menu</span>
                                         <ul id="menu-departments-menu-1" class="nav">
-                                            <li class="highlight menu-item animate-dropdown">
-                                                <a title="Value of the Day" href="{{ url('/stores') }}">All Stores</a>
-                                            </li>
-                                          {{--  @foreach($supermarkets as $supermarket)
+
                                             <li class="highlight menu-item animate-dropdown text-capitalize">
-                                                <a title="Top 100 Offers" href="{{ url('/store', [$supermarket->slug]) }}">{{$supermarket->name}}</a>
+                                                <a  href="{{url('/pickup_and_delivery')}}" >Pick up and delivery</a>
+
                                             </li>
-                                            @endforeach --}}
+                                            <li class="highlight menu-item animate-dropdown text-capitalize">
+                                                <a  href="{{url('groceries_and_delivery')}}" >Groceries delivery</a>
+
+                                            </li>
+                                            <li class="highlight menu-item animate-dropdown text-capitalize dropdown">
+                                                <a data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" href="#" aria-expanded="false" >Stores<span class="caret"></span></a>
+                                                <ul role="menu" class=" dropdown-menu">
+                                                    <li class="menu-item animate-dropdown">
+                                                        <a title="ALl Stores" href="{{ url('/stores') }}">Stores</a>
+                                                    </li>
+                                                        <li class="menu-item animate-dropdown">
+                                                          <a class="dropdown-item" href="stores.html">African</a>
+                                                        </li>
+                                                        <li class="menu-item animate-dropdown">
+                                                          <a class="dropdown-item" href="stores.html">International</a>
+                                                        </li>
+                                                        <li class="menu-item animate-dropdown">
+                                                          <a class="dropdown-item" href="stores.html">Main Market</a>
+                                                        </li>
+                                                        <li class="menu-item animate-dropdown">
+                                                          <a class="dropdown-item" href="stores.html">Others</a>
+                                                        </li>
+
+                                                </ul>
+                                                <!-- .dropdown-menu -->
+                                            </li>
+                                            <li class="highlight menu-item animate-dropdown text-capitalize dropdown">
+                                                <a data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" href="#" aria-expanded="false" >Categories<span class="caret"></span></a>
+                                                <ul role="menu" class=" dropdown-menu">
+                                                    <li class="menu-item animate-dropdown">
+                                                        <a title="All Categories" href="{{ url('/categories') }}">All Categories</a>
+                                                    </li>
+                                                    @foreach($categories as $category)
+                                                        <li class="menu-item animate-dropdown">
+                                                            <a title="{{ $category->name }}" href="{{url('/stores') . '?' . http_build_query(['category_name' => $category->name])}}">{{ $category->name }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                                <!-- .dropdown-menu -->
+                                            </li>
+                                            <li class="highlight menu-item animate-dropdown text-capitalize">
+                                                <a href="{{ url('/products') }}" >Track your delivery</a>
+                                            </li>
+
+                                            @guest
+                                                <li class="highlight menu-item animate-dropdown text-capitalize">
+
+                                                  <li><a class="" href="{{ url('/login') }}" ><i class="tm tm-login-register"></i> Login </a></li>
+                                                  <li><a class="" href="{{ url('/register') }}" > <i class="tm tm-login-register"></i> Sign up </a></li>
+
+                                                </li>
+                                                @else
+                                                <li class="highlight menu-item animate-dropdown text-capitalize">
+                                                    <a href="{{ url(Auth::user()->role.'/') }}" >Enter Dashboard</a>
+                                                </li>
+                                            @endguest
+
                                         </ul>
+
                                     </div>
                                     <!-- .handheld-navigation-menu -->
                                 </nav>
@@ -456,8 +516,8 @@
             <!-- #content -->
             <footer class="site-footer footer-v1" style="background-color: black">
                 <div class="col-full">
-                    <div class="before-footer-wrap">
-                        <div class="col-full">
+                    <div class="before-footer-wrap" style="background-color: #fff">
+                        <div class="col-full mb-5">
                             <div class="footer-newsletter">
                                 <div class="media">
                                     <i class="footer-newsletter-icon tm tm-newsletter"></i>
@@ -475,9 +535,9 @@
                                     @endif
                                         <div class="clearfix">
                                             <div class="newsletter-header">
-                                                <h5 class="newsletter-title text-white">Sign up to Newsletter</h5>
-                                                <span class="newsletter-marketing-text text-white">...and receive
-                                                    <strong class="text-white">special discounts</strong>
+                                                <h5 class="newsletter-title ">Sign up to Newsletter</h5>
+                                                <span class="newsletter-marketing-text ">...and receive
+                                                    <strong class="">special discounts</strong>
                                                 </span>
                                             </div>
                                             <!-- .newsletter-header -->
@@ -507,15 +567,15 @@
                                 <ul class="social-icons nav">
                                     <li class="nav-item">
                                         <a class="sm-icon-label-link nav-link" href="javascript:viod(0)">
-                                            <i class="fa fa-facebook text-white"></i> Facebook</a>
+                                            <i class="fa fa-facebook"></i> Facebook</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="sm-icon-label-link nav-link" href="javascript:viod(0)">
-                                            <i class="fa fa-instagram text-white"></i> Instagram</a>
+                                            <i class="fa fa-instagram"></i> Instagram</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="sm-icon-label-link nav-link" href="javascript:viod(0)">
-                                            <i class="fa fa-google-youtube text-white"></i> YouTube</a>
+                                            <i class="fa fa-youtube"></i> YouTube</a>
                                     </li>
                                 </ul>
                             </div>
@@ -526,14 +586,14 @@
                     <!-- .before-footer-wrap -->
                     <div class="footer-widgets-block">
                         <div class="row">
-                            <div class="footer-contact">
-                                <div class="footer-logo">
-                                    <a href="{{ url('/') }}" class="custom-logo-link" rel="home">
-                                        <img width="100px" src="{{url('asset/img/logo.jpeg')}}" alt="">
+                            <div class="footer-contact row col-lg-6">
+                                <div class="footer-logo col-lg-6 col-6">
+                                    <a href="{{ url('/') }}" class="custom-logo-link ml-3" rel="home">
+                                        <img width="100px" src="{{url('asset/assets/img/logo.png')}}" alt="">
                                     </a>
                                 </div>
                                 <!-- .footer-logo -->
-                                <div class="contact-payment-wrap">
+                                <div class="contact-payment-wrap col-lg-6 col-6">
                                     <div class="footer-contact-info">
                                         <div class="media">
                                             <span class="media-left icon media-middle">
@@ -552,9 +612,9 @@
                                 <!-- .contact-payment-wrap -->
                             </div>
                             <!-- .footer-contact -->
-                            <div class="footer-widgets">
-                                <div class="columns">
-                                    <aside class="widget clearfix">
+                            <div class="footer-widgets col-lg-6">
+                                <div class="columns border-left col-lg-6">
+                                    <aside class="widget ml-3 clearfix">
                                         <div class="body">
                                             <h4 class="widget-title text-white">About Us</h4>
                                             <div class="menu-footer-menu-1-container">
@@ -569,7 +629,7 @@
                                                         <a href="{{ url('/delivery_terms') }}" class=" text-secondary">Delivery Terms</a>
                                                     </li>
                                                     <li class="menu-item text-white">
-                                                        <a href="{{ url('/agent/all_agents') }}" class=" text-secondary">Agents</a>
+                                                        <a href="{{ url('/agent/all_agents') }}" class=" text-secondary">Drivers</a>
                                                     </li>
                                                     <li class="menu-item text-white">
                                                         <a href="{{ url('/contact_us') }}" class=" text-secondary">Contact</a>
@@ -583,8 +643,8 @@
                                     <!-- .widget -->
                                 </div>
                                 <!-- .columns -->
-                                <div class="columns">
-                                    <aside class="widget clearfix">
+                                <div class="columns col-lg-6">
+                                    <aside class="widget ml-3 clearfix">
                                         <div class="body">
                                             <h4 class="widget-title text-white">Customer</h4>
                                             <div class="menu-footer-menu-3-container">
@@ -641,6 +701,7 @@
         </div>
 
         <script type="text/javascript" src="{{ asset('customer/js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script type="text/javascript" src="{{ asset('customer/js/tether.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('customer/js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('customer/js/jquery-migrate.min.js') }}"></script>
@@ -654,12 +715,50 @@
         <script type="text/javascript" src="{{ asset('customer/js/pace.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('customer/js/slick.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('customer/js/scripts.js') }}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script>
+const j = jQuery.noConflict();
+j('#paybutton').on('click', function() {
+          swal({
+              title: 'Thank you for patronizing us today. Our pickup partners will soon be on their way.',
+              text: 'Assigned Delivery Code: 4242.',
+              icon: 'success',
+              className: "btn-primary",
+              buttons: ["OK","Return to home"],
+          });
+
+          // j('.standard-color').on('click', function() {
+          //     window.location = "/login?redirect_back={{url()->current()}}";
+          // })
+      })
+j('#cardupdated').on('click', function() {
+          swal({
+              title: 'Card Details Updated Successfuly',
+              text: 'Your card details have been updated successfuly',
+              icon: 'success',
+              className: "btn-primary",
+              button: {
+
+                text: "Okay Thanks",
+              }
+          });
+
+          // j('.standard-color').on('click', function() {
+          //     window.location = "/login?redirect_back={{url()->current()}}";
+          // })
+      })
+</script>
+        <script>
+        const a = jQuery.noConflict();
+        a(function () {
+          a('[data-toggle="popover"]').popover()
+        })
+        </script>
         <script
         src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
         crossorigin="anonymous"></script>
-
         <script type="text/javascript">
 
             const base_url = "{{ url('/') }}"
@@ -824,11 +923,11 @@
                                     let head_cart_list = `<li class="woocommerce-mini-cart-item mini_cart_item">
                                                                 <a href="javascript:void(0)" class="remove" onclick="remove_from_cart(`+ product_id +`)">×</a>
                                                                 <a href="`+ base_url + `/product/` + product_slug+`">
-                                                                    <img src="`+ file_path +`/uploads/products/images/`+ product_image +`" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="">`+ product_name +`
+                                                                    <img src="/asset/img/33.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="">`+ product_name +`
                                                                 </a>
                                                                 <span class="quantity">`+ product_quantity +` ×
                                                                     <span class="woocommerce-Price-amount amount">
-                                                                        <span class="woocommerce-Price-currencySymbol">₦ </span>`+ curency_format (product_price) +` = ₦`+ curency_format (total_product_amount )+`</span>
+                                                                        <span class="woocommerce-Price-currencySymbol">$ </span>`+ curency_format (product_price) +` = $`+ curency_format (total_product_amount )+`</span>
                                                                 </span>
                                                             </li>`
 
@@ -843,36 +942,37 @@
 
                                                                 <td class="product-thumbnail">
                                                                     <a href="`+ base_url + `/product/` + product_slug+`">
-                                                                        <img width="180" height="180" alt="" class="wp-post-image" src="`+ file_path +`/uploads/products/images/`+ product_image +`">
+                                                                        <img width="180" height="180" alt="" class="wp-post-image" src="/asset/img/33.jpg">
                                                                     </a>
                                                                 </td>
 
                                                                 <td data-title="Product" class="product-name">
                                                                     <div class="media cart-item-product-detail">
                                                                         <a href="`+ base_url + `/product/` + product_slug+`">
-                                                                            <img width="180" height="180" alt="" class="wp-post-image" src="`+ file_path +`/uploads/products/images/`+ product_image +`">
+                                                                            <img width="180" height="180" alt="" class="wp-post-image" src="/asset/img/33.jpg">
                                                                         </a>
                                                                         <div class="media-body align-self-center">
                                                                             <a href="`+ base_url + `/product/` + product_slug+`">`+ product_name +`</a>
-                                                                            <p>`+ supermarket_name +`, `+ supermarket_area +`, `+ supermarket_state +` </p>
+                                                                            <p>Oba Market, 1122 Jane Street</p>
+                                                                            <!-- <p>`+ supermarket_name +`, `+ supermarket_area +`, `+ supermarket_state +` </p> -->
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td data-title="Price" class="product-price">
                                                                     <span class="woocommerce-Price-amount amount">
-                                                                        <span class="woocommerce-Price-currencySymbol">₦</span>`+ curency_format (product_price) +`
+                                                                        <span class="woocommerce-Price-currencySymbol">$</span>`+ curency_format (product_price) +`
                                                                     </span>
                                                                 </td>
                                                                 <td class="product-quantity" data-title="Quantity">
                                                                     <div class="quantity">
                                                                         <button onclick="increase_cart(`+ product_id +`)" type="button" class="button">+</button>
-                                                                        <button type="button" class="button btn-secondary" style="background-color: gray">`+ product_quantity +`</button>
+                                                                        <button type="button" class="button btn-light text-dark" style="background-color:#fff">`+ product_quantity +`</button>
                                                                         <button onclick="decrease_cart(`+ product_id +`)" type="button" class="button">-</button>
                                                                     </div>
                                                                 </td>
                                                                 <td data-title="Total" class="product-subtotal">
                                                                     <span class="woocommerce-Price-amount amount">
-                                                                        <span class="woocommerce-Price-currencySymbol">₦</span>`+ curency_format (total_product_amount )+`
+                                                                        <span class="woocommerce-Price-currencySymbol">$</span>`+ curency_format (total_product_amount )+`
                                                                     </span>
                                                                     <a onclick="remove_from_cart(`+ product_id +`)" title="Remove this item" class="remove" href="javasccript:void(0)">×</a>
                                                                 </td>
@@ -889,7 +989,7 @@
                                                                     </td>
                                                                     <td class="product-total">
                                                                         <span class="woocommerce-Price-amount amount">
-                                                                            <span class="woocommerce-Price-currencySymbol">₦</span>`+ curency_format (total_product_amount )+`</span>
+                                                                            <span class="woocommerce-Price-currencySymbol">$</span>`+ curency_format (total_product_amount )+`</span>
                                                                     </td>
                                                                 </tr>`
                                         $('#checkout_cart').append(view_checkout_cart_html)

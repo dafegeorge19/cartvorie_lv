@@ -6,10 +6,46 @@
 @section('content')
 <br>
 <br>
-
+<style media="screen">
+.feature-image {
+/* background: url(asset/img/food1.jpg) no-repeat fixed top center; */
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: top;
+background-size: cover;
+height: 270px;
+background-blend-mode: overlay;
+}
+</style>
 
     <div id="content" class="site-content" tabindex="-1">
         <div class="col-full">
+          <div class="banners">
+          <div class="category-feature" style="background-color:#652f91">
+
+            <div class="jumbotron text-white text-center feature-image" style="background-image: url(asset/img/african1.jpg);background-color:#652f91">
+              <div class="row w-100 d-flex justify-content-center" style="padding: 60px;">
+                <h3 class="col-12 display-5 text-center text-light">Start shopping</h3>
+
+                <div class="col-6">
+
+                  <div class="input-group">
+                    <input type="text" id="search" class="form-control search-field product-search-field" dir="ltr" value="" name="product_name" required placeholder="Search Stores" />
+
+                    <!-- .input-group-addon -->
+                    <div class="input-group-btn input-group-append">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                        <!-- <span class="search-btn">Search</span> -->
+                      </button>
+                    </div>
+                    <!-- .input-group-btn -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
             <div class="row">
                 <!-- .woocommerce-breadcrumb -->
                 <div id="primary" class="content-area">
@@ -33,22 +69,6 @@
                         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <!-- .shop-control-bar -->
                         <div class="tab-content">
                             <div id="grid" class="tab-pane active" role="tabpanel">
@@ -57,21 +77,73 @@
 
 
 
-                                        @foreach($stores->forPage($_GET['page'], 16) as $store)
+                                      {{--  @foreach($stores->forPage($_GET['page'], 16) as $store) --}}
                                             <div class="product">
                                                 <!-- .yith-wcwl-add-to-wishlist -->
-                                                <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/store', [$store->slug])}}">
-                                                    <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('storage/uploads/supermarkets/images/logos/'.$store->get_image()) }}">
-                                                    <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0 text-capitalize text-text-truncate">{{$store->name}}</h2>
-                                                    <small class="text-capitalize text-truncate pt-0 d-block">{{$store->products->count()}} Products</small>
+                                                <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/store', [@$store->slug])}}">
+                                                    <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/p2.jpg') }}">
+                                                    <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0 text-capitalize text-text-truncate">Oba Market</h2>
+                                                    <small class="text-capitalize text-truncate pt-0 d-block">{{@$store->products}}100 Products</small>
+
+                                                        <!-- <a class="button" href="{{url('/store', [@$store->slug]).'?category_name='.$_GET['category_name']}}">10km Away</a> -->
+                                                        <a class="button" href="{{url('/store/shoprite')}}">10km Away</a>
+
                                                 </a>
                                                 <!-- .woocommerce-LoopProduct-link -->
                                                 <div class="hover-area">
-                                                    <a class="button" href="{{url('/store', [$store->slug]).'?category_name='.$_GET['category_name']}}">Visit Store</a>
+                                                    <a class="button" href="{{url('/store/shoprite')}}">Visit Store</a>
                                                 </div>
                                                 <!-- .hover-area -->
                                             </div>
-                                        @endforeach
+                                            <div class="product">
+                                                <!-- .yith-wcwl-add-to-wishlist -->
+                                                <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/store', [@$store->slug])}}">
+                                                    <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/i.jpg') }}">
+                                                    <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0 text-capitalize text-text-truncate">Mosaic African Food</h2>
+                                                    <small class="text-capitalize text-truncate pt-0 d-block">{{@$store->products}}100 Products</small>
+
+                                                        <a class="button" href="{{url('/store/shoprite')}}">10km Away</a>
+
+                                                </a>
+                                                <!-- .woocommerce-LoopProduct-link -->
+                                                <div class="hover-area">
+                                                    <a class="button" href="{{url('/store/shoprite')}}">Visit Store</a>
+                                                </div>
+                                                <!-- .hover-area -->
+                                            </div>
+                                            <div class="product">
+                                                <!-- .yith-wcwl-add-to-wishlist -->
+                                                <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/store', [@$store->slug])}}">
+                                                    <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/p2.jpg') }}">
+                                                    <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0 text-capitalize text-text-truncate">Oba Market</h2>
+                                                    <small class="text-capitalize text-truncate pt-0 d-block">{{@$store->products}}100 Products</small>
+
+                                                        <a class="button" href="{{url('/store/shoprite')}}">10km Away</a>
+
+                                                </a>
+                                                <!-- .woocommerce-LoopProduct-link -->
+                                                <div class="hover-area">
+                                                    <a class="button" href="{{url('/store/shoprite')}}">Visit Store</a>
+                                                </div>
+                                                <!-- .hover-area -->
+                                            </div>
+                                            <div class="product">
+                                                <!-- .yith-wcwl-add-to-wishlist -->
+                                                <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/store', [@$store->slug])}}">
+                                                    <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/i.jpg') }}">
+                                                    <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0 text-capitalize text-text-truncate">Mosaic African Food</h2>
+                                                    <small class="text-capitalize text-truncate pt-0 d-block">{{@$store->products}}100 Products</small>
+
+                                                        <a class="button" href="{{url('/store/shoprite')}}">10km Away</a>
+
+                                                </a>
+                                                <!-- .woocommerce-LoopProduct-link -->
+                                                <div class="hover-area">
+                                                    <a class="button" href="{{url('/store/shoprite')}}">Visit Store</a>
+                                                </div>
+                                                <!-- .hover-area -->
+                                            </div>
+                                      {{--  @endforeach --}}
 
 
 
@@ -84,22 +156,7 @@
                             <!-- .tab-pane -->
                         </div>
                         <!-- .tab-content -->
-                        <div class="shop--bar-bottom">
 
-                            <nav class="woocommerce-pagination">
-                                <ul class="page-numbers">
-                                    @for($i = 1; $i <= ceil($stores->count()/16) ; $i++)
-                                        <li>
-                                            <span class="page-numbers {{$_GET['page'] == $i ? 'disabled current' : ''}}">
-                                                <a href="{{ url('/stores?&page=' . $i) }}">{{$i}}</a>
-                                            </span>
-                                        </li>
-                                    @endfor
-                                </ul>
-                                <!-- .page-numbers -->
-                            </nav>
-                            <!-- .woocommerce-pagination -->
-                        </div>
                         <!-- .shop-control-bar-bottom -->
                     </main>
                     <!-- #main -->
@@ -118,7 +175,7 @@
                                             </a>
                                         </span>
                                     </li>
-                                    
+
                                     @foreach($categories as $category)
                                         <li>
                                             <span class="text-capitalize" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
@@ -145,12 +202,11 @@
                                 <div class="container-fluid">
                                     <div class="woocommerce columns-1">
                                         <div class="products">
-
                                             @foreach($products->take(8) as $product)
                                                 <div class="landscape-product-widget product">
                                                     <a class="woocommerce-LoopProduct-link" href="{{url('/product', [$product->slug])}}">
                                                         <div class="media">
-                                                            <img class="wp-post-image" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(1)) }}" alt="">
+                                                            <img class="wp-post-image" src="{{ asset('asset/img/33.jpg') }}" alt="">
                                                             <div class="media-body">
                                                                 {!!$product->price_html()!!}
                                                                 <!-- .price -->
@@ -197,7 +253,7 @@
                                             @foreach($products->take(8) as $product)
                                                 <div class="product">
                                                     <a href="{{url('/product', [$product->slug])}}" class="woocommerce-LoopProduct-link">
-                                                        <img src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(1)) }}" width="224" height="197" class="wp-post-image" alt="">
+                                                        <img src="{{ asset('asset/img/33.jpg') }}" width="224" height="197" class="wp-post-image" alt="">
                                                         <span class="price">
                                                             {!!$product->price_html()!!}
                                                         </span>

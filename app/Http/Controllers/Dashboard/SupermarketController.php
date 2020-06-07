@@ -55,17 +55,17 @@ class SupermarketController extends Controller
             'name'           => ['required', 'max:255'],
             'state'          => ['required'],
             'area'           => ['required'],
-            'account_type' => ['required'],
+            'street_address' => ['required'],
             'description' => 'required',
             // 'logo'           => ['required'],
         ]);
-        
+
         $name           = $request->name;
         $state_id       = $request->state;
         $area_id        = $request->area;
-        $account_type = $request->account_type;
+        $street_address = $request->street_address;
         $description    = $request->description;
-        
+
         // generate slug
         $slug       = Str::slug($name, '-');
         $check_slug = Supermarket::where('slug', $slug)->first();
@@ -80,17 +80,17 @@ class SupermarketController extends Controller
                 $adder++;
             }
         }
-        
+
         $supermarket                 = new Supermarket();
         $supermarket->name           = $name;
         $supermarket->slug           = $new_slug;
         $supermarket->state_id       = $state_id;
         $supermarket->area_id        = $area_id;
-        $supermarket->account_type = $account_type;
+        $supermarket->street_address = $street_address;
         $supermarket->description    = $description;
-        
+
         if($supermarket->save()) {
-            
+
             if ($request->hasFile('logo')) { // if there is a logo file then upload the file
 
                 $logo           = $request->logo;
@@ -99,7 +99,7 @@ class SupermarketController extends Controller
                 $logo_extension = $logo->extension();
                 $gen_logo_name  = md5(now() . $user_id . 'logo_name' . $logo_name);
                 $new_logo_name  = $gen_logo_name . '.' . $logo_extension;
-                $fited_logo     = Image::make($logo ->getRealPath())->fit(255, 197); 
+                $fited_logo     = Image::make($logo ->getRealPath())->fit(255, 197);
                 $save_logo      = $fited_logo->save('storage/uploads/supermarkets/images/logos/' . $new_logo_name, 60);  //save image to server
 
                 if($save_logo) {
@@ -107,7 +107,7 @@ class SupermarketController extends Controller
                 }
 
             }
-            
+
             return redirect()->route('all_supermarkets')->with([
                 'message' => 'New supermarket has been saved.',
                 'type' => 'success'
@@ -173,29 +173,28 @@ class SupermarketController extends Controller
             'name'           => ['required', 'max:255'],
             'state'          => ['required'],
             'area'           => ['required'],
-            'account_type' => ['required'],
+            'street_address' => ['required'],
             'description' => 'required',
             // 'logo'           => ['required'],
         ]);
-        
-        $supermarket = Supermarket::find($id);
 
+        $supermarket = Supermarket::find($id);
         if($supermarket) {
 
             $name           = $request->name;
             $state_id       = $request->state;
             $area_id        = $request->area;
-            $account_type = $request->account_type;
+            $street_address = $request->street_address;
             $description    = $request->description;
 
             $supermarket->name           = $name;
             $supermarket->state_id       = $state_id;
             $supermarket->area_id        = $area_id;
-            $supermarket->account_type = $account_type;
+            $supermarket->street_address = $street_address;
             $supermarket->description    = $description;
 
             if($supermarket->save()) {
-            
+
                 if ($request->hasFile('logo')) { // if there is a logo file then upload the file
 
                     // first delete the curent logo from db
@@ -210,15 +209,16 @@ class SupermarketController extends Controller
                     $logo_extension = $logo->extension();
                     $gen_logo_name  = md5(now() . $user_id . 'logo_name' . $logo_name);
                     $new_logo_name  = $gen_logo_name . '.' . $logo_extension;
-                    $fited_logo     = Image::make($logo ->getRealPath())->fit(255, 197); 
-                    $save_logo      = $fited_logo->save('storage/uploads/supermarkets/images/logos/' . $new_logo_name, 60);  //save image to server
+                    // dd( $new_logo_name );
+                    $fited_logo     = Image::make($logo ->getRealPath())->fit(255, 197);
+                    $save_logo      = $fited_logo->save(storage_path('storage/uploads/supermarkets/images/logos/' . $new_logo_name), 60);  //save image to server
 
                     if($save_logo) {
                         $supermarket->images()->create(['name' => $new_logo_name]);
                     }
 
                 }
-                
+
                 return redirect()->back()->with([
                     'message' => 'Supermarket was updated Successfuly',
                     'type' => 'success'
@@ -226,7 +226,7 @@ class SupermarketController extends Controller
 
             }
         }
-        
+
         return redirect()->back()->with([
             'message' => 'There was an error updating your supermarket',
             'type'    => 'fail'
@@ -255,7 +255,7 @@ class SupermarketController extends Controller
 
             // now delete the supermarket
             $supermarket->delete();
-            
+
             return redirect()->back()->with([
                 'message' => 'Supermarket was deleted Successfuly',
                 'type' => 'success'

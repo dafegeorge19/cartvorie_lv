@@ -6,7 +6,26 @@
 @section('content')
 <br>
 <br>
-
+<style media="screen">
+.jumbotron {
+  border: 2px solid #eeeeee;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 0px;
+  margin-bottom: 3.125em;
+  position: relative;
+  overflow: hidden;
+}
+.feature-image {
+/* background: url(asset/img/food1.jpg) no-repeat fixed top center; */
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: top;
+background-size: cover;
+height: 270px;
+background-blend-mode: overlay;
+}
+</style>
 
             <div id="content" class="site-content" tabindex="-1">
                 <div class="col-full">
@@ -16,17 +35,43 @@
                         <div id="primary" class="content-area">
                             <main id="main" class="site-main">
                                 <div class="shop-archive-header">
-                                    <div class="jumbotron">
-                                        <div class="jumbotron-img">
-                                            <img width="416" height="283" alt="" src="{{ asset('storage/uploads/supermarkets/images/logos/'.$store->get_image()) }}" class="jumbo-image alignright">
-                                        </div>
-                                        <div class="jumbotron-caption text-capitalize">
-                                            <h3 class="jumbo-title" style="margin-bottom: 0px"> Welcome to {{$store->name}}</h3>
-                                            <small class="mb-2">{{$store->area->name . ', ' . $store->state->name}}</small>
 
-                                            <p class="jumbo-subtitle">{{$store->description}}</p>
+                                    <div class="category-feature" style="background-color:#652f91">
+
+                                      <div class="jumbotron text-white feature-image" style="background-image: url(/asset/img/p2.jpg);background-color:#652f91">
+                                        <div class="row w-100 d-flex justify-content-center" style="padding: 60px;">
+                                          <h3 class="jumbo-title text-white" style="margin-bottom: 0px"> Welcome to Oba Market</h3>
+
+                                            <div class="col-6">
+                                              <small class="mb-2">1122 Jane Street</small>
+                                              <small class="mb-2">42324534432344</small>
+                                              <p class="jumbo-subtitle"> Description</p>
+
+                                            </div>
+                                            <div class="col-6 justify-content-end text-right" style="display:inline-grid;">
+                                              <span class="mb-2">9AM - 9PM</span>
+                                              <span class="mb-2">Time Info<span class="badge badge-dark"><i class="fa fa-info" data-toggle="popover" data-content="Orders made 30 minutes before store closing may not be delivered same day"></i></span></small> <br>
+                                              <span class="mb-2">Order Info<span class="badge badge-dark"><i class="fa fa-info" data-toggle="popover" data-content="You can order from multiple stores, just add product to cart, go back and choose another store"></i></span></small>
+
+                                            </div>
+
+                                          <div class="col-6">
+
+                                            <div class="input-group">
+                                              <input type="text" id="search" class="form-control search-field product-search-field" dir="ltr" value="" name="product_name" required placeholder="Search Products" />
+
+                                              <!-- .input-group-addon -->
+                                              <div class="input-group-btn input-group-append">
+                                                <button type="submit" class="btn btn-primary">
+                                                  <i class="fa fa-search"></i>
+                                                  <!-- <span class="search-btn">Search</span> -->
+                                                </button>
+                                              </div>
+                                              <!-- .input-group-btn -->
+                                            </div>
+                                          </div>
                                         </div>
-                                        <!-- .jumbotron-caption -->
+                                      </div>
                                     </div>
                                     <!-- .jumbotron -->
                                 </div>
@@ -73,7 +118,7 @@
                                                     <div class="product first">
                                                         <!-- .yith-wcwl-add-to-wishlist -->
                                                         <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/product', [$store_product->slug])}}">
-                                                            <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('storage/uploads/products/images/'.$store_product->get_product_image(1)) }}">
+                                                            <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('/asset/img/33.jpg') }}">
                                                             {!!$store_product->price_html()!!}
                                                             <h2 class="woocommerce-loop-product__title text-capitalize pb-0">{{$store_product->name}}</h2>
                                                         </a>
@@ -119,9 +164,9 @@
                         </div>
                         <!-- #primary -->
                         <div id="secondary" class="widget-area shop-sidebar" role="complementary">
-                            
+
                             <div id="techmarket_products_filter-3" class="widget widget_techmarket_products_filter">
-                                
+
 
 
 
@@ -138,7 +183,7 @@
                                                         <a href="{{url('/store', [$store->slug]) . '?' . http_build_query(['category_name' => ''])}}" class="">All Categories</a>
                                                     </span>
                                                 </li>
-                                                
+
                                                 @foreach($store->categories() as $store_category)
                                                     <li>
                                                         <span class="dropdown-toggle text-capitalize" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">

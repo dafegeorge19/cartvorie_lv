@@ -22,6 +22,9 @@ Route::permanentRedirect('/home', '/');
 // Pages
 Route::view('/about_us', 'customer.about_us');
 Route::view('/delivery_terms', 'customer.delivery_terms');
+Route::view('/pickup_and_delivery', 'customer.pickup_delivery');
+Route::view('/payment_information', 'customer.payment_information');
+// Route::view('/checkout', 'customer.checkout');
 Route::view('/terms_and_conditions', 'customer.terms_and_conditions');
 
 Route::get('/drop', function()
@@ -49,6 +52,7 @@ Route::get('/product/{slug}', 'ProductsController@view_single_product');
 
 // view stores
 Route::get('/stores', 'ProductsController@stores');
+Route::get('/groceries_and_delivery', 'ProductsController@stores');
 Route::get('/store/{slug}', 'ProductsController@store');
 
 // view

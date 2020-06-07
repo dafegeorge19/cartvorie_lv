@@ -140,11 +140,11 @@
                                         <nav class="custom-slick-nav"></nav>
                                     </header>
                                     <!-- .section-header -->
-                                    <div class="product-categories-1 product-categories-carousel" data-ride="tm-slick-carousel" data-wrap=".products" data-slick="{&quot;slidesToShow&quot;:5,&quot;slidesToScroll&quot;:1,&quot;dots&quot;:false,&quot;arrows&quot;:true,&quot;prevArrow&quot;:&quot;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;tm tm-arrow-left\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;&quot;,&quot;nextArrow&quot;:&quot;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;tm tm-arrow-right\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;&quot;,&quot;appendArrows&quot;:&quot;#categories-carousel-1 .custom-slick-nav&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}},{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesToScroll&quot;:4}}]}">
+                                    <div class="product-categories-1 product-categories-carousel" data-ride="tm-slick-carousel" data-wrap=".products" data-slick="{&quot;slidesToShow&quot;:5,&quot;slidesToScroll&quot;:1,&quot;autoplay&quot;:true,&quot;dots&quot;:false,&quot;arrows&quot;:true,&quot;prevArrow&quot;:&quot;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;tm tm-arrow-left\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;&quot;,&quot;nextArrow&quot;:&quot;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;tm tm-arrow-right\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;&quot;,&quot;appendArrows&quot;:&quot;#categories-carousel-1 .custom-slick-nav&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}},{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesToScroll&quot;:4}}]}">
                                         <div class="woocommerce columns-5">
                                             <div class="products">
 
-                                                    <div class="product-category product first">
+                                                    <div class="product-category product first active">
                                                         <a href="{{ url('stores?category_name=') }}">
                                                             <img width="224" height="197" alt="All in One PC" src="{{ asset('asset/img/h.jpg') }}">
                                                             <h2 class="text-capitalize text-truncate woocommerce-loop-category__title">
@@ -234,102 +234,7 @@
 
 
 
-                                <section>
-                                          <div class="row w-100 d-flex pl-4 p-4 justify-content-center">
-                                            <span class="text-left h4 section-header">TOP CATEGORIES</span>
-                                          </div>
-                                          <div class="container-fluid product-box justify-content-center">
-                                            <div class="card m-3 product-1">
-                                              <div class="row no-gutters">
-                                                <div class="col-6">
-                                                  <div class="desc-1">
-                                                    <span class="h6 mb-4">Provisions</span>
-                                                    <span>90 Sold</span>
-
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="p-3 p-image">
-                                                    <img src="asset/img/b.jpg" class="card-img" alt="...">
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="card m-3 product-1">
-                                              <div class="row no-gutters">
-                                                <div class="col-6">
-                                                  <div class="desc-1">
-                                                    <span class="h6 mb-4">Soda</span>
-                                                    <span>100 Sold</span>
-
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="p-3 p-image">
-                                                    <img src="asset/img/c.jpg" class="card-img" alt="...">
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="card m-3 product-1">
-                                              <div class="row no-gutters">
-                                                <div class="col-6">
-                                                  <div class="desc-1">
-                                                    <span class="h6 mb-4">Cosmetics</span>
-                                                    <span>120 Sold</span>
-
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="p-3 p-image">
-                                                    <img src="asset/img/d.jpg" class="card-img" alt="...">
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="card m-3 product-1">
-                                              <div class="row no-gutters">
-                                                <div class="col-6">
-                                                  <div class="desc-1">
-                                                    <span class="h6 mb-4">Vegetables</span>
-                                                    <span>120 Sold</span>
-
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="p-3 p-image">
-                                                    <img src="asset/img/g2.jpg" class="card-img" alt="...">
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="card m-3 product-1">
-                                              <div class="row no-gutters">
-                                                <div class="col-6">
-                                                  <div class="desc-1">
-                                                    <span class="h6 mb-4">Spices</span>
-                                                    <span>300 Sold</span>
-
-                                                  </div>
-                                                </div>
-                                                <div class="col-6">
-                                                  <div class="p-3 p-image">
-                                                    <img src="asset/img/g.jpg" class="card-img" alt="...">
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="more text-center p-4">
-                                            <a href="#" class="icontext">
-                                              <div class="text">
-
-                                                <button class="btn btn-primary border-0 h2">View All</button>
-                                              </div>
-                                            </a>
-                                          </div>
-                                       </section>
-
+                  
 
 
                                 @if($supermarkets->where('id', 1) != null)
@@ -337,7 +242,7 @@
                                 <section class="section-hot-new-arrivals section-products-carousel-tabs techmarket-tabs">
                                     <div class="section-products-carousel-tabs-wrap">
                                         <header class="section-header">
-                                            <h2 class="section-title">All Product <a href="javascrip:void(0)"></a></h2>
+                                            <h2 class="section-title">Top Category <a href="javascrip:void(0)"></a></h2>
                                             <ul role="tablist" class="nav justify-content-end">
                                                 <li class="nav-item d-none"><a class="nav-link active" href="#tab-59f89f08825d50" data-toggle="tab">Cat 1</a></li>
                                                 <li class="nav-item d-none"><a class="nav-link " href="#tab-59f89f08825d51" data-toggle="tab">Cat 2</a></li>
@@ -351,21 +256,77 @@
                                                 <div class="products-carousel" data-ride="tm-slick-carousel" data-wrap=".products" data-slick="{&quot;infinite&quot;:false,&quot;slidesToShow&quot;:7,&quot;slidesToScroll&quot;:7,&quot;dots&quot;:true,&quot;arrows&quot;:false,&quot;responsive&quot;:[{&quot;breakpoint&quot;:700,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2}},{&quot;breakpoint&quot;:780,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesToScroll&quot;:3}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesToScroll&quot;:4}},{&quot;breakpoint&quot;:1400,&quot;settings&quot;:{&quot;slidesToShow&quot;:5,&quot;slidesToScroll&quot;:5}}]}">
                                                     <div class="container-fluid">
                                                         <div class="woocommerce">
-                                                            <div class="products">
-                                                                @foreach($supermarkets->where('id', 1)->first()->products->take(10) as $product)
-                                                                    <div class="product">
-                                                                        <a href="{{url('/product', [$product->slug])}}" class="woocommerce-LoopProduct-link">
-                                                                            <img src="{{ asset('asset/img/33.jpg') }}" width="224" height="197" class="wp-post-image" alt="">
-                                                                            $13
-                                                                            <!-- /.price -->
-                                                                            <h2 class="woocommerce-loop-product__title text-tr text-truncate text-capitalize" data-toggle="tooltip" data-placement="bottom" title="Bbd 23-Inch screen LED-Lit Monitorss Buds">{{$product->name}}</h2>
-                                                                        </a>
-                                                                        <div class="hover-area">
-                                                                            <a class="button add_to_cart_button" href="javascript:void(0)" rel="nofollow" onclick="add_to_cart({{$product->id}})">Add to cart</a>
-                                                                        </div>
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
+                                                          <div class="products">
+
+
+
+                                                            {{--  @foreach($categories->forPage($_GET['page'], 16) as $category) --}}
+                                                                  <div class="product">
+                                                                      <!-- .yith-wcwl-add-to-wishlist -->
+                                                                      <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/stores') . '?' . @http_build_query(['category_name' => @$category->name])}}">
+                                                                          <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/b.jpg')}}">
+                                                                          <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0">Provisions</h2>
+                                                                      </a>
+                                                                      <!-- .woocommerce-LoopProduct-link -->
+                                                                      <div class="hover-area">
+                                                                          <a class="button" href="{{url('/product') . '?' . @http_build_query(['category_name' => @$category->name])}}">View products</a>
+                                                                      </div>
+                                                                      <!-- .hover-area -->
+                                                                  </div>
+                                                                  <div class="product">
+                                                                      <!-- .yith-wcwl-add-to-wishlist -->
+                                                                      <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/stores') . '?' . @http_build_query(['category_name' => @$category->name])}}">
+                                                                          <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/c.jpg')}}">
+                                                                          <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0">Soda</h2>
+                                                                      </a>
+                                                                      <!-- .woocommerce-LoopProduct-link -->
+                                                                      <div class="hover-area">
+                                                                          <a class="button" href="{{url('/product') . '?' . @http_build_query(['category_name' => @$category->name])}}">View products</a>
+                                                                      </div>
+                                                                      <!-- .hover-area -->
+                                                                  </div>
+                                                                  <div class="product">
+                                                                      <!-- .yith-wcwl-add-to-wishlist -->
+                                                                      <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/stores') . '?' . @http_build_query(['category_name' => @$category->name])}}">
+                                                                          <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/d.jpg')}}">
+                                                                          <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0">Cosmetics</h2>
+                                                                      </a>
+                                                                      <!-- .woocommerce-LoopProduct-link -->
+                                                                      <div class="hover-area">
+                                                                          <a class="button" href="{{url('/product') . '?' . @http_build_query(['category_name' => @$category->name])}}">View products</a>
+                                                                      </div>
+                                                                      <!-- .hover-area -->
+                                                                  </div>
+                                                                  <div class="product">
+                                                                      <!-- .yith-wcwl-add-to-wishlist -->
+                                                                      <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/stores') . '?' . @http_build_query(['category_name' => @$category->name])}}">
+                                                                          <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/g2.jpg')}}">
+                                                                          <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0">Vegetables</h2>
+                                                                      </a>
+                                                                      <!-- .woocommerce-LoopProduct-link -->
+                                                                      <div class="hover-area">
+                                                                          <a class="button" href="{{url('/product') . '?' . @http_build_query(['category_name' => @$category->name])}}">View products</a>
+                                                                      </div>
+                                                                      <!-- .hover-area -->
+                                                                  </div>
+                                                                  <div class="product">
+                                                                      <!-- .yith-wcwl-add-to-wishlist -->
+                                                                      <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="{{url('/stores') . '?' . @http_build_query(['category_name' => @$category->name])}}">
+                                                                          <img width="224" height="197" alt="" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="{{ asset('asset/img/g.jpg')}}">
+                                                                          <h2 class="woocommerce-loop-product__title text-capitalize text-truncate pb-0">Spices</h2>
+                                                                      </a>
+                                                                      <!-- .woocommerce-LoopProduct-link -->
+                                                                      <div class="hover-area">
+                                                                          <a class="button" href="{{url('/product') . '?' . @http_build_query(['category_name' => @$category->name])}}">View products</a>
+                                                                      </div>
+                                                                      <!-- .hover-area -->
+                                                                  </div>
+                                                              {{--@endforeach --}}
+
+
+
+
+                                                          </div>
                                                         </div>
                                                         <!-- .woocommerce -->
                                                     </div>
@@ -376,6 +337,7 @@
 
                                         </div>
                                         <!-- .tab-content -->
+
                                     </div>
                                     <!-- .section-products-carousel-tabs-wrap -->
                                 </section>
@@ -388,7 +350,14 @@
                                 </div>
                                 <!-- /.banner -->
 
-
+                                <div class="mid-full banners">
+                                      <div class="jumbotron text-white text-center" style="background-color: #000; opacity: 0.9;">
+                                          <h3 class="display-5 text-center text-white">Need Pick Up & Delivery Services?</h3>
+                                          <p class="lead">We can help</p>
+                                          <hr class="my-4">
+                                          <a class="btn bg-dark border text-white btn-lg" href="#" role="button" style="background-image: linear-gradient(to right, #c0f, #8200e5 );">Pick Up Request</a>
+                                      </div>
+                                      </div>
                             </main>
                             <!-- #main -->
                         </div>

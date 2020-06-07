@@ -14,9 +14,26 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/bootstrap.min.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/font-awesome.min.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/bootstrap-grid.min.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/bootstrap-reboot.min.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/font-techmarket.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/slick.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/techmarket-font-awesome.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/slick-style.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/animate.min.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/style.css') }}" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('customer/css/colors/purple.css') }}" media="all" />
+
   <link href="{{ asset('asset/assets/css/material-dashboard.css?v=2.1.2') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{ asset('asset/assets/demo/demo.css') }}" rel="stylesheet" />
+<style media="screen">
+  input {
+    border: none !important;
+  }
+</style>
 </head>
 
 <body class="" style="background-color: white;">
@@ -66,61 +83,61 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/purchase_history')}}">
+            <a class="nav-link" href="#">
 
               <p>Purchase History</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/start_shopping')}}">
+            <a class="nav-link" href="{{url('stores')}}">
 
               <p>Start Shopping</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="orders.html">
+            <a class="nav-link" href="#">
 
               <p>Message</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/riders.html')}}">
+            <a class="nav-link" href="{{url('pickup_and_delivery')}}">
 
               <p>Pickup and Delivery</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/stores.html')}}">
+            <a class="nav-link" href="#">
 
               <p>Points</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/wallet.html')}}">
+            <a class="nav-link" href="#">
 
               <p>Contact Admin</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/routing.html')}}">
+            <a class="nav-link" href="#">
 
               <p>Favourite</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/delivery_status')}}">
+            <a class="nav-link" href="#">
 
               <p>Delivery Status</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/newsletter.html')}}">
+            <a class="nav-link" href="#">
 
               <p>FAQ</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url(Auth::user()->role.'/settings.html')}}">
+            <a class="nav-link" href="#">
 
               <p>Settings</p>
             </a>

@@ -23,14 +23,14 @@
                                                             @if($product->get_product_image(1) != 'avatar.png')
                                                                 <div data-thumb="{{ asset('storage/uploads/products/images/'.$product->get_product_image(1)) }}" class="woocommerce-product-gallery__image">
                                                                     <a href="{{ asset('storage/uploads/products/images/'.$product->get_product_image(1)) }}" tabindex="0">
-                                                                        <img width="600" height="600" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(1)) }}" class="attachment-shop_single size-shop_single wp-post-image" alt="">
+                                                                        <img width="600" height="600" src="{{ asset('asset/img/33.jpg') }}" class="attachment-shop_single size-shop_single wp-post-image" alt="">
                                                                     </a>
                                                                 </div>
                                                             @endif
 
                                                             @if($product->get_product_image(2) != 'avatar.png')
-                                                                <div data-thumb="{{ asset('storage/uploads/products/images/'.$product->get_product_image(2)) }}" class="woocommerce-product-gallery__image">
-                                                                    <a href="{{ asset('storage/uploads/products/images/'.$product->get_product_image(2)) }}" tabindex="-1">
+                                                                <div data-thumb="{{ asset('asset/img/33.jpg') }}" class="woocommerce-product-gallery__image">
+                                                                    <a href="{{ asset('asset/img/33.jpg') }}" tabindex="-1">
                                                                         <img width="600" height="600" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(2)) }}" class="attachment-shop_single size-shop_single" alt="">
                                                                     </a>
                                                                 </div>
@@ -45,24 +45,24 @@
                                                             @endif
 
                                                             @if($product->get_product_image(5) != 'avatar.png')
-                                                                <div data-thumb="{{ asset('storage/uploads/products/images/'.$product->get_product_image(4)) }}" class="woocommerce-product-gallery__image">
-                                                                    <a href="{{ asset('storage/uploads/products/images/'.$product->get_product_image(4)) }}" tabindex="-1">
+                                                                <div data-thumb="{{ asset('asset/img/33.jpg') }}" class="woocommerce-product-gallery__image">
+                                                                    <a href="{{ asset('asset/img/33.jpg') }}" tabindex="-1">
                                                                         <img width="600" height="600" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(4)) }}" class="attachment-shop_single size-shop_single" alt=""> </a>
                                                                 </div>
                                                             @endif
 
                                                             @if($product->get_product_image(5) != 'avatar.png')
-                                                                <div data-thumb="{{ asset('storage/uploads/products/images/'.$product->get_product_image(5)) }}" class="woocommerce-product-gallery__image">
-                                                                    <a href="{{ asset('storage/uploads/products/images/'.$product->get_product_image(5)) }}" tabindex="-1">
-                                                                        <img width="600" height="600" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(5)) }}" class="attachment-shop_single size-shop_single" alt="">
+                                                                <div data-thumb="{{ asset('asset/img/33.jpg') }}" class="woocommerce-product-gallery__image">
+                                                                    <a href="{{ asset('asset/img/33.jpg') }}" tabindex="-1">
+                                                                        <img width="600" height="600" src="{{ asset('asset/img/33.jpg') }}" class="attachment-shop_single size-shop_single" alt="">
                                                                     </a>
                                                                 </div>
                                                             @endif
 
                                                             @if($product->get_product_image(6) != 'avatar.png')
-                                                                <div data-thumb="{{ asset('storage/uploads/products/images/'.$product->get_product_image(6)) }}" class="woocommerce-product-gallery__image">
-                                                                    <a href="{{ asset('storage/uploads/products/images/'.$product->get_product_image(6)) }}" tabindex="-1">
-                                                                        <img width="600" height="600" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(6)) }}" class="attachment-shop_single size-shop_single" alt="">
+                                                                <div data-thumb="{{ asset('asset/img/33.jpg') }}" class="woocommerce-product-gallery__image">
+                                                                    <a href="{{ asset('asset/img/33.jpg') }}" tabindex="-1">
+                                                                        <img width="600" height="600" src="{{ asset('asset/img/33.jpg') }}" class="attachment-shop_single size-shop_single" alt="">
                                                                     </a>
                                                                 </div>
                                                             @endif
@@ -74,14 +74,14 @@
                                                 <div class="techmarket-single-product-gallery-thumbnails" data-ride="tm-slick-carousel" data-wrap=".techmarket-single-product-gallery-thumbnails__wrapper" data-slick="{&quot;infinite&quot;:false,&quot;slidesToShow&quot;:4,&quot;slidesToScroll&quot;:1,&quot;dots&quot;:false,&quot;arrows&quot;:true,&quot;vertical&quot;:true,&quot;verticalSwiping&quot;:true,&quot;focusOnSelect&quot;:true,&quot;touchMove&quot;:true,&quot;prevArrow&quot;:&quot;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;tm tm-arrow-up\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;&quot;,&quot;nextArrow&quot;:&quot;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;tm tm-arrow-down\&quot;&gt;&lt;\/i&gt;&lt;\/a&gt;&quot;,&quot;asNavFor&quot;:&quot;#techmarket-single-product-gallery .woocommerce-product-gallery__wrapper&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:765,&quot;settings&quot;:{&quot;vertical&quot;:false,&quot;horizontal&quot;:true,&quot;verticalSwiping&quot;:false,&quot;slidesToShow&quot;:4}}]}">
                                                     <figure class="techmarket-single-product-gallery-thumbnails__wrapper">
                                                         @if($product->get_product_image(1) != 'avatar.png')
-                                                            <figure data-thumb="{{ asset('customer/images/products/sm-card-1.jpg') }}" class="techmarket-wc-product-gallery__image">
-                                                                <img width="180" height="180" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(1)) }}" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="">
+                                                            <figure data-thumb="{{ asset('asset/img/33.jpg') }}" class="techmarket-wc-product-gallery__image">
+                                                                <img width="180" height="180" src="{{ asset('asset/img/33.jpg') }}" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="">
                                                             </figure>
                                                         @endif
 
                                                         @if($product->get_product_image(2) != 'avatar.png')
-                                                            <figure data-thumb="{{ asset('customer/images/products/sm-card-3.jpg') }}" class="techmarket-wc-product-gallery__image">
-                                                                <img width="180" height="180" src="{{ asset('storage/uploads/products/images/'.$product->get_product_image(2)) }}" class="attachment-shop_thumbnail size-shop_thumbnail" alt="">
+                                                            <figure data-thumb="{{ asset('asset/img/33.jpg') }}" class="techmarket-wc-product-gallery__image">
+                                                                <img width="180" height="180" src="{{ asset('asset/img/33.jpg') }}" class="attachment-shop_thumbnail size-shop_thumbnail" alt="">
                                                             </figure>
                                                         @endif
 
@@ -119,13 +119,13 @@
                                         <div class="summary entry-summary">
                                             <div class="single-product-header">
                                                 <h1 class="product_title entry-title text-capitalize text-truncate">{{$product->name}}</h1>
-                                                
+                                                <span class="text-dark entry-title text-truncate">STORE: Oba Market</span>
                                             </div>
                                             <!-- .single-product-header -->
                                             <div class="single-product-meta">
                                                 <div class="brand">
                                                     <a href="{{ url('products?category_name='.$product->category->name) }}">
-                                                        <img width="40px" alt="galaxy" src="{{ asset('storage/uploads/categories/images/' . $product->category->get_image()) }}">
+                                                        <img width="40px" alt="galaxy" src="{{ asset('asset/img/33.jpg') }}">
                                                     </a>
                                                 </div>
                                                 <div class="cat-and-sku">
@@ -160,12 +160,12 @@
                                                         @if($product->sales_price)
                                                         <del>
                                                             <span class="woocommerce-Price-amount amount">
-                                                                <span class="woocommerce-Price-currencySymbol">₦</span>{{$product->price}}</span>
+                                                                <span class="woocommerce-Price-currencySymbol">$</span>{{$product->price}}</span>
                                                         </del>
                                                         @endif
                                                         <ins>
                                                             <span class="woocommerce-Price-amount amount">
-                                                                <span class="woocommerce-Price-currencySymbol">₦</span>{{$product->product_price()}}</span>
+                                                                <span class="woocommerce-Price-currencySymbol">$</span>{{$product->product_price()}}</span>
                                                         </ins>
                                                     </p>
                                                     <!-- .single-product-header -->
@@ -204,11 +204,11 @@
                                                     @endif
                                                     <div class="product">
                                                         <a href="{{ url('/product/'.$related_product->slug) }}" class="woocommerce-LoopProduct-link">
-                                                            <img src="{{ asset('storage/uploads/products/images/'.$related_product->get_product_image(1)) }}" width="224" height="197" class="wp-post-image" alt="">
+                                                            <img src="{{ asset('asset/img/33.jpg') }}" width="224" height="197" class="wp-post-image" alt="">
                                                             <h2 class="woocommerce-loop-product__title">{{$related_product->name}}</h2>
                                                             {!!$related_product->price_html()!!}
                                                             <!-- /.price -->
-                                                            
+
                                                         </a>
                                                         <div class="hover-area">
                                                             <a class="button add_to_cart_button" href="javascript:viod(0)" rel="nofollow" onclick="add_to_cart({{$related_product->id}})">Add to cart</a>

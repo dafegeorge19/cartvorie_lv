@@ -101,7 +101,7 @@
                     </div>
 
                   </div>
-                  
+
 
                   <div class="row">
 
@@ -120,7 +120,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                             <label for="account_type">Steet Address<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="account_type" name="account_type" placeholder="e.g No 1, Kudang Street" value="{{ old('account_type') ? old('account_type') : $supermarket->account_type }}" required>
+                            <input type="text" class="form-control" id="account_type" name="street_address" placeholder="e.g No 1, Kudang Street" value="{{ old('street_address') ? old('street_address') : $supermarket->street_address }}" required>
                             @error('account_type')
                                 <small class="text-red" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -129,7 +129,7 @@
                         </div>
                       </div>
 
-                      
+
 
                       <div class="col-md-6">
                         <div>
@@ -182,7 +182,7 @@
 
         // when user selects a new satte, get the cities for that state
         $('#state').on('change', function(e) {
-            
+
             $('#area').attr('disabled', 'disabled')
             $('#area').empty()
             $('#area').append(`<option value="" class="text-capitalize">Select Area</option>`)
